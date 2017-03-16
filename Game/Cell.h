@@ -15,6 +15,11 @@ private:
     int value;
     sf::Color GetColor(int value);
     shared_ptr<sf::RectangleShape> tile;
+	void BrushInRed();
+	void BrushInCellColor();
+protected:
+	void OnMouseOn();
+	void OnMouseOff();
 public:
     Cell(sf::RenderWindow& app): GameObject(app), value(512)
         { }

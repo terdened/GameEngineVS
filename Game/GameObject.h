@@ -10,7 +10,6 @@
 #include <list>
 #include "ResourceManager.h"
 #include "Silhouette.h"
-#include <signal.h>
 
 using namespace std;
 
@@ -28,15 +27,18 @@ namespace GameEngine {
         float pivotX;
         float pivotY;
         bool isMouseOn;
-        void HandleMouseOnEvent();
-        void HandleOnClickEvent();
-        void HandleMouseOutEvent();
+        void HandleMouseOnEvent(bool isMouseOnObject);
+        void HandleOnClickEvent(bool isMouseOnObject);
+        void HandleMouseOutEvent(bool isMouseOnObject);
     protected:
         GameObject* parent = nullptr;
         float x;
         float y;
         sf::RenderWindow& renderWindow;
         ResourceManager* resourceManager;
+		virtual void OnPressed();
+		virtual void OnMouseOn();
+		virtual void OnMouseOff();
     public:
         //creation functions
         GameObject(sf::RenderWindow& app): renderWindow(app), x(0), y(0), depth(0), name("untitled"), rotation(0),
@@ -133,8 +135,6 @@ namespace GameEngine {
         void SetScale(sf::Vector2f scale);
         void SetPivotPoint(sf::Vector2f pivotPoint);
         bool IsMouseOn();
-
-        //boost::signal<void()> OnPressed;
     };
 }
 

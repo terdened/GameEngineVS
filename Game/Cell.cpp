@@ -17,12 +17,7 @@ template < typename T > std::string to_string( const T& n )
 }
 
 void Cell::Update() {
-    GameObject::Update();
-
-    if(IsMouseOn())
-        tile->setFillColor(Color(200,30,30));
-    else
-        tile->setFillColor(GetColor(value));
+    GameObject::Update();        
 }
 
 void Cell::Init(ResourceManager* resourceManager) {
@@ -54,6 +49,22 @@ void Cell::Init(ResourceManager* resourceManager) {
     text->setPosition(textLeftOffset, textTopOffset);
 
     AddShape(text);
+}
+
+void Cell::OnMouseOn() {
+	BrushInRed();
+}
+
+void Cell::OnMouseOff() {
+	BrushInCellColor();
+}
+
+void Cell::BrushInRed(){
+	tile->setFillColor(Color(200, 30, 30));
+}
+
+void Cell::BrushInCellColor() {
+	tile->setFillColor(GetColor(value));
 }
 
 Color Cell::GetColor(int value){

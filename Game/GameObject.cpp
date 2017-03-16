@@ -28,6 +28,11 @@ namespace GameEngine {
         list<shared_ptr<GameObject>>::iterator iter;
         for (iter = childs.begin(); iter != childs.end(); iter++)
             (**iter).Update();
+
+		auto isMouseOnObject = IsMouseOn();
+		HandleMouseOnEvent(isMouseOnObject);
+		HandleOnClickEvent(isMouseOnObject);
+		HandleMouseOutEvent(isMouseOnObject);
     }
 
     void GameObject::AddChild(shared_ptr<GameObject> child) {
@@ -83,9 +88,31 @@ namespace GameEngine {
         return false;
     }
 
-    void GameObject::HandleMouseOnEvent() {
-        if(!isMouseOn) {
-
+    void GameObject::HandleMouseOnEvent(bool isMouseOnObject) {
+        if(!isMouseOn && isMouseOnObject) {
+			isMouseOn = true;
+			OnMouseOn();
         }
     }
+
+	void GameObject::HandleOnClickEvent(bool isMouseOnObject) {
+		if (isMouseOn) {
+			
+		}
+	}
+
+	void GameObject::HandleMouseOutEvent(bool isMouseOnObject) {
+		if (isMouseOn && !isMouseOnObject) {
+			isMouseOn = false;
+			OnMouseOff();
+		}
+	}
+
+
+	void GameObject::OnPressed()
+		{	}
+	void GameObject::OnMouseOn()
+		{	}
+	void GameObject::OnMouseOff()
+		{	}
 }
