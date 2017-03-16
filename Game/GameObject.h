@@ -10,6 +10,7 @@
 #include <list>
 #include "ResourceManager.h"
 #include "Silhouette.h"
+#include "Animation.h"
 
 using namespace std;
 
@@ -39,10 +40,11 @@ namespace GameEngine {
 		virtual void OnPressed();
 		virtual void OnMouseOn();
 		virtual void OnMouseOff();
+		Animation* animation;
     public:
         //creation functions
         GameObject(sf::RenderWindow& app): renderWindow(app), x(0), y(0), depth(0), name("untitled"), rotation(0),
-                                           scaleX(1), scaleY(1), pivotX(0), pivotY(0), isMouseOn(false)
+                                           scaleX(1), scaleY(1), pivotX(0), pivotY(0), isMouseOn(false), animation(nullptr)
             {    }
         virtual void Init(ResourceManager* resourceManager) = 0;
 

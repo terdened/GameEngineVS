@@ -9,10 +9,15 @@ namespace GameEngine {
 
     void GameObject::Draw(sf::Transform parentTransform) {
         sf::Transform transform;
+
+		if (animation != nullptr)
+			transform = transform.combine(animation->GetCurrentTransform());
         transform.combine(parentTransform);
         transform.translate(x,y);
         transform.rotate(rotation, pivotX, pivotY);
         transform.scale(scaleX, scaleY);
+
+
         sf::RenderStates renderStates(transform);
 
         list<shared_ptr<sf::Drawable>>::iterator shapeIter;
@@ -22,12 +27,17 @@ namespace GameEngine {
         list<shared_ptr<GameObject>>::iterator gameObjectIter;
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
             (**gameObjectIter).Draw(transform);
+
+
     }
 
     void GameObject::Update() {
         list<shared_ptr<GameObject>>::iterator iter;
         for (iter = childs.begin(); iter != childs.end(); iter++)
             (**iter).Update();
+
+		if (animation != nullptr)
+			animation->Update();
 
 		auto isMouseOnObject = IsMouseOn();
 		HandleMouseOnEvent(isMouseOnObject);

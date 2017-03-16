@@ -34,6 +34,9 @@
     <Filter Include="Source Files\Core\Structure">
       <UniqueIdentifier>{e7a94175-1c7e-4a90-ab14-5a27732876fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Core\Animation">
+      <UniqueIdentifier>{f6049a04-991b-4d1a-a14f-bd9920d91c58}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -90,6 +93,12 @@
     <ClInclude Include="Sprite.h">
       <Filter>Source Files\Core\Structure</Filter>
     </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Source Files\Core\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyFrame.h">
+      <Filter>Source Files\Core\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -142,6 +151,9 @@
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\Core\Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files\Core\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

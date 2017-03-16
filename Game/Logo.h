@@ -13,7 +13,10 @@ using namespace GameEngine;
 class Logo : public SpriteGameObject{
 public:
     Logo(sf::RenderWindow& app, string resourceName): SpriteGameObject(app, resourceName)
-        {   }
+        {
+
+		animation = new Animation();
+	}
     void Update();
 };
 

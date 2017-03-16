@@ -145,10 +145,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="FontResource.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="KeyFrame.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MainSceneResourceLoader.h" />
@@ -164,6 +166,7 @@
     <ClInclude Include="TextureResource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FontResource.cpp" />

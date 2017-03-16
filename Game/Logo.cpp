@@ -10,5 +10,4 @@ using namespace sf;
 
 void Logo::Update() {
     GameObject::Update();
-    GameObject::Rotate(1);
 }
