@@ -47,6 +47,14 @@ namespace GameEngine {
 		return c;
 	}
 
+	sf::Transform GetTransformBasedOnFrame(KeyFrame frame, float pivotX, float pivotY) {
+		auto result = sf::Transform();
+		result.translate(frame.Position);
+		result.scale(frame.Scale);
+		result.rotate(frame.Rotation, pivotX, pivotY);
+		return result;
+	}
+
 	void Animation::Update() {
 		CurrentFrame++;
 
@@ -64,19 +72,37 @@ namespace GameEngine {
 		int currentKeyFramePosition = CurrentFrame - activeFrame.FrameNumber;
 
 		if (currentKeyFrameDuration == 0) {
-			CurrentTransform = activeFrame.Transform;
+			CurrentTransform = activeFrame;
 			return;
 		}
 
-		auto activeFrameMatrix = activeFrame.Transform.getMatrix();
-		auto nextFrameMatrix = nextFrame.Transform.getMatrix();
+		auto resultFrame = KeyFrame();
 
-		auto incrementMatrix = SubdivideMatrix(SubMatrix(nextFrameMatrix, activeFrameMatrix), currentKeyFrameDuration);
-		auto currentTransformMatrix = AddMatrix(activeFrame.Transform.getMatrix(), MultiplyMatrix(incrementMatrix, currentKeyFramePosition));
+		//auto activeFrameMatrix = activeFrame.Transform.getMatrix();
+		//auto nextFrameMatrix = nextFrame.Transform.getMatrix();
+
+		auto deltaPosition = (nextFrame.Position - activeFrame.Position);
+		deltaPosition.x  = deltaPosition.x * currentKeyFramePosition / currentKeyFrameDuration;
+		deltaPosition.y  = deltaPosition.y * currentKeyFramePosition /currentKeyFrameDuration;
+
+		auto deltaScale = (nextFrame.Scale - activeFrame.Scale);
+		deltaScale.x = deltaScale.x * currentKeyFramePosition / currentKeyFrameDuration;
+		deltaScale.y = deltaScale.y * currentKeyFramePosition / currentKeyFrameDuration;
+
+		auto deltaRotation = (nextFrame.Rotation - activeFrame.Rotation) * currentKeyFramePosition / currentKeyFrameDuration;
+
+		//auto incrementMatrix = SubdivideMatrix(SubMatrix(nextFrameMatrix, activeFrameMatrix), currentKeyFrameDuration);
+
+
+		auto currentFrame = KeyFrame();
+
+		currentFrame.Position = activeFrame.Position + deltaPosition;
+		currentFrame.Scale = activeFrame.Scale + deltaScale;
+		currentFrame.Rotation = activeFrame.Rotation + deltaRotation;
+
+		//auto currentTransformMatrix = AddMatrix(activeFrame.Transform.getMatrix(), MultiplyMatrix(incrementMatrix, currentKeyFramePosition));
 		
-		CurrentTransform = sf::Transform(currentTransformMatrix[0], currentTransformMatrix[4], currentTransformMatrix[12],
-										 currentTransformMatrix[1], currentTransformMatrix[5], currentTransformMatrix[13],
-										 currentTransformMatrix[3], currentTransformMatrix[7], currentTransformMatrix[15]);
+		CurrentTransform = currentFrame;
 	}
 
 	KeyFrame Animation::GetActiveKeyFrame(int currentFrame) {

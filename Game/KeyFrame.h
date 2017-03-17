@@ -5,9 +5,11 @@
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine {
-	class KeyFrame {
-	public:
+	struct KeyFrame {
 		int FrameNumber;
 		sf::Transform Transform;
+		float Rotation;
+		sf::Vector2f Scale;
+		sf::Vector2f Position;
 	};
 }

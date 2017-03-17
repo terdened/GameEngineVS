@@ -137,6 +137,10 @@ namespace GameEngine {
         void SetScale(sf::Vector2f scale);
         void SetPivotPoint(sf::Vector2f pivotPoint);
         bool IsMouseOn();
+
+		void PlayAnimation(Animation* animation) {
+			this->animation = animation;
+		}
     };
 }
 

@@ -10,12 +10,21 @@ namespace GameEngine {
     void GameObject::Draw(sf::Transform parentTransform) {
         sf::Transform transform;
 
-		if (animation != nullptr)
-			transform = transform.combine(animation->GetCurrentTransform());
+		auto accRotaiton = rotation;
+		auto accPosition = sf::Vector2f(x, y);
+		auto accScale = sf::Vector2f(scaleX, scaleY);
+
+		if (animation != nullptr) {
+			accRotaiton += animation->GetCurrentTransform().Rotation;
+			accPosition += animation->GetCurrentTransform().Position;
+			accScale.x *= animation->GetCurrentTransform().Scale.x;
+			accScale.y *= animation->GetCurrentTransform().Scale.y;
+		}
+
         transform.combine(parentTransform);
-        transform.translate(x,y);
-        transform.rotate(rotation, pivotX, pivotY);
-        transform.scale(scaleX, scaleY);
+        transform.translate(accPosition.x, accPosition.y);
+        transform.rotate(accRotaiton, pivotX, pivotY);
+        transform.scale(accScale.x, accScale.y);
 
 
         sf::RenderStates renderStates(transform);
