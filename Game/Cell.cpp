@@ -5,6 +5,8 @@
 #include "stdafx.h"
 #include "Cell.h"
 #include "RectangularSilhouette.h"
+#include "MouseOnTileAnimation.h"
+#include "MouseOutTileAnimation.h"
 #include <sstream>
 
 using namespace sf;
@@ -61,10 +63,12 @@ void Cell::OnMouseOff() {
 
 void Cell::BrushInRed(){
 	tile->setFillColor(Color(200, 30, 30));
+	PlayAnimation(new MouseOnTileAnimation());
 }
 
 void Cell::BrushInCellColor() {
 	tile->setFillColor(GetColor(value));
+	PlayAnimation(new MouseOutTileAnimation());
 }
 
 Color Cell::GetColor(int value){

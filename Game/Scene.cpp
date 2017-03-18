@@ -8,13 +8,13 @@ namespace GameEngine {
     void Scene::Draw() {
         list<GameObject*>::iterator gameObjectIter;
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
-            (**gameObjectIter).Draw(sf::Transform());
+            (*gameObjectIter)->Draw(TransformData());
     }
 
     void Scene::Update() {
         list<GameObject*>::iterator gameObjectIter;
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
-            (**gameObjectIter).Update();
+            (*gameObjectIter)->Update();
     }
 
     void Scene::AddChild(GameObject* child) {

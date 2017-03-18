@@ -7,24 +7,24 @@
 
 namespace GameEngine {
 
-    void GameObject::Draw(sf::Transform parentTransform) {
+    void GameObject::Draw(TransformData parentTransformData) {
         sf::Transform transform;
 
-		auto accRotaiton = rotation;
-		auto accPosition = sf::Vector2f(x, y);
-		auto accScale = sf::Vector2f(scaleX, scaleY);
+		TransformData accTransform;
+		accTransform.Rotation = rotation + parentTransformData.Rotation;
+		accTransform.Position = sf::Vector2f(x + parentTransformData.Position.x, y + parentTransformData.Position.y);
+		accTransform.Scale = sf::Vector2f(scaleX * parentTransformData.Scale.x, scaleY * parentTransformData.Scale.y);
 
 		if (animation != nullptr) {
-			accRotaiton += animation->GetCurrentTransform().Rotation;
-			accPosition += animation->GetCurrentTransform().Position;
-			accScale.x *= animation->GetCurrentTransform().Scale.x;
-			accScale.y *= animation->GetCurrentTransform().Scale.y;
+			accTransform.Rotation += animation->GetCurrentTransform().TransformData.Rotation;
+			accTransform.Position += animation->GetCurrentTransform().TransformData.Position;
+			accTransform.Scale.x *= animation->GetCurrentTransform().TransformData.Scale.x;
+			accTransform.Scale.y *= animation->GetCurrentTransform().TransformData.Scale.y;
 		}
 
-        transform.combine(parentTransform);
-        transform.translate(accPosition.x, accPosition.y);
-        transform.rotate(accRotaiton, pivotX, pivotY);
-        transform.scale(accScale.x, accScale.y);
+        transform.translate(accTransform.Position.x, accTransform.Position.y);
+        transform.rotate(accTransform.Rotation, pivotX, pivotY);
+        transform.scale(accTransform.Scale.x, accTransform.Scale.y, pivotX, pivotY);
 
 
         sf::RenderStates renderStates(transform);
@@ -35,7 +35,7 @@ namespace GameEngine {
 
         list<shared_ptr<GameObject>>::iterator gameObjectIter;
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
-            (**gameObjectIter).Draw(transform);
+            (*gameObjectIter)->Draw(accTransform);
 
 
     }

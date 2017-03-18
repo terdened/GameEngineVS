@@ -49,7 +49,7 @@ namespace GameEngine {
         virtual void Init(ResourceManager* resourceManager) = 0;
 
         //time erase functions
-        void Draw(sf::Transform parentTransform);
+        void Draw(TransformData parentTransformData);
         virtual void Update();
 
         //structure functions
@@ -58,21 +58,38 @@ namespace GameEngine {
         void AddSilhouette(shared_ptr<Silhouette> silhouette);
 
         //field accessors
+		float GlobalX() {
+			if (parent == nullptr)
+				return  x;
+			return parent->x + x;
+		}
+		float GlobalY() {
+			if (parent == nullptr)
+				return  y;
+			return parent->y + y;
+		}
+
+		float GlobalRotation() {
+			if (parent == nullptr)
+				return  rotation;
+			return parent->rotation + rotation;
+		}
+		float GlobalScaleX() {
+			if (parent == nullptr)
+				return  scaleX;
+			return parent->scaleX * scaleX;
+		}
+		float GlobalScaleY() {
+			if (parent == nullptr)
+				return  scaleY;
+			return parent->scaleY * scaleY;
+		}
+
         float X() {
             return x;
         }
         void X(float value) {
             x = value;
-        }
-        float GlobalX() {
-            if(parent == nullptr)
-                return  x;
-            return parent->x + x;
-        }
-        float GlobalY() {
-            if(parent == nullptr)
-                return  y;
-            return parent->y + y;
         }
         void Parent(GameObject* parent){
             this->parent = parent;
