@@ -25,8 +25,6 @@ namespace GameEngine {
         ResourceManager(void (*createResource)(Resource **, const unsigned int, const string &, const string &))
                 : createResource(createResource) {}
 
-        ~ResourceManager();
-
         template<class TResource>
         unsigned int Add(const string &filename, const string &name, const string &path = "./") {
             unsigned int handle = 1;

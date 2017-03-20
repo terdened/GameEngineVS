@@ -6,8 +6,14 @@
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine {
+	enum KeyFrameType {
+		Static, 
+		TransformAnimation
+	};
+
 	struct KeyFrame {
 		int FrameNumber;
 		TransformData TransformData;
+		KeyFrameType Type;
 	};
 }

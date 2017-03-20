@@ -18,8 +18,14 @@ namespace GameEngine {
 		}
 
 		auto activeFrame = GetActiveKeyFrame(CurrentFrame);
-		auto nextFrame = GetNextKeyFrame(CurrentFrame);
 		
+		if (activeFrame.Type == KeyFrameType::Static) {
+			CurrentTransform = activeFrame;
+			return;
+		}
+
+
+		auto nextFrame = GetNextKeyFrame(CurrentFrame);
 		int currentKeyFrameDuration = nextFrame.FrameNumber - activeFrame.FrameNumber;
 		int currentKeyFramePosition = CurrentFrame - activeFrame.FrameNumber;
 

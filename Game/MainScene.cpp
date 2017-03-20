@@ -22,11 +22,11 @@ void MainScene::Init() {
     resourceLoader = new MainSceneResourceLoader(resourceManager);
     resourceLoader->Load();
 
-    Field *field = new Field(renderWindow);
+    auto field = std::make_shared<Field>(renderWindow);
     field->SetPosition(sf::Vector2f(350, 150));
     AddChild(field);
 
-    auto logo = new Logo(renderWindow, "logo");
+    auto logo = std::make_shared<Logo>(renderWindow, "logo");
     AddChild(logo);
     logo->SetScale(sf::Vector2f(0.5f, 0.5f));
 	logo->PlayAnimation(new WalkAroundFieldAnimation());

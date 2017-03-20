@@ -29,11 +29,16 @@ namespace GameEngine {
 
         sf::RenderStates renderStates(transform);
 
-        list<shared_ptr<sf::Drawable>>::iterator shapeIter;
+		vector<shared_ptr<sf::Drawable>>::iterator shapeIter;
         for (shapeIter = shapes.begin(); shapeIter != shapes.end(); shapeIter++)
             renderWindow.draw(**shapeIter, renderStates);
 
-        list<shared_ptr<GameObject>>::iterator gameObjectIter;
+		sort(childs.begin(), childs.end(),
+			[](const shared_ptr<GameObject> &lhs, const shared_ptr<GameObject> &rhs) {
+			return lhs->Depth() < rhs->Depth();
+		});
+
+		vector<shared_ptr<GameObject>>::iterator gameObjectIter;
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
             (*gameObjectIter)->Draw(accTransform);
 
@@ -41,7 +46,7 @@ namespace GameEngine {
     }
 
     void GameObject::Update() {
-        list<shared_ptr<GameObject>>::iterator iter;
+		vector<shared_ptr<GameObject>>::iterator iter;
         for (iter = childs.begin(); iter != childs.end(); iter++)
             (**iter).Update();
 
@@ -99,7 +104,7 @@ namespace GameEngine {
     }
 
     bool GameObject::IsMouseOn() {
-        list<shared_ptr<Silhouette>>::iterator silhouetteIter;
+		vector<shared_ptr<Silhouette>>::iterator silhouetteIter;
         for (silhouetteIter = silhouettes.begin(); silhouetteIter != silhouettes.end(); silhouetteIter++)
             if((*silhouetteIter)->IsMouseOn(renderWindow))
                 return true;

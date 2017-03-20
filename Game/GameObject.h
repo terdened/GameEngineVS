@@ -17,9 +17,9 @@ using namespace std;
 namespace GameEngine {
     class GameObject {
     private:
-        list<shared_ptr<sf::Drawable>> shapes;
-        list<shared_ptr<GameObject>> childs;
-        list<shared_ptr<Silhouette>> silhouettes;
+		vector<shared_ptr<sf::Drawable>> shapes;
+        vector<shared_ptr<GameObject>> childs;
+		vector<shared_ptr<Silhouette>> silhouettes;
         float rotation;
         float scaleX;
         float scaleY;
@@ -156,6 +156,7 @@ namespace GameEngine {
         bool IsMouseOn();
 
 		void PlayAnimation(Animation* animation) {
+			delete this->animation;
 			this->animation = animation;
 		}
     };

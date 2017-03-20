@@ -18,13 +18,15 @@ public:
 		KeyFrame1.TransformData.Position = sf::Vector2f(0, 0);
 		KeyFrame1.TransformData.Rotation = 0;
 		KeyFrame1.TransformData.Scale = sf::Vector2f(1, 1);
+		KeyFrame1.Type = KeyFrameType::TransformAnimation;
 		KeyFrames.push_back(KeyFrame1);
 
 		auto KeyFrame2 = KeyFrame();
 		KeyFrame2.FrameNumber = 9;
 		KeyFrame2.TransformData.Position = sf::Vector2f(0, 0);
 		KeyFrame2.TransformData.Rotation = 0;
-		KeyFrame2.TransformData.Scale = sf::Vector2f(1.1, 1.1);
+		KeyFrame2.TransformData.Scale = sf::Vector2f(1.15, 1.15);
+		KeyFrame2.Type = KeyFrameType::TransformAnimation;
 		KeyFrames.push_back(KeyFrame2);
 	}
 };

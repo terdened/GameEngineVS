@@ -62,11 +62,13 @@ void Cell::OnMouseOff() {
 }
 
 void Cell::BrushInRed(){
+	Depth(100);
 	tile->setFillColor(Color(200, 30, 30));
 	PlayAnimation(new MouseOnTileAnimation());
 }
 
 void Cell::BrushInCellColor() {
+	Depth(0);
 	tile->setFillColor(GetColor(value));
 	PlayAnimation(new MouseOutTileAnimation());
 }
