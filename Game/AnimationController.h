@@ -5,6 +5,8 @@
 #include <map>
 #include <string>
 
+using namespace std;
+
 namespace GameEngine {
 
 	class AnimationController {
@@ -13,16 +15,16 @@ namespace GameEngine {
 			{	}
 		void Update();
 
-		Animation* GetCurrentAnimation() {
+		shared_ptr<Animation> GetCurrentAnimation() {
 			return CurrentAnimation;
 		}
-		std::map<std::string, std::string> Params;
-		void SetParamValue(std::string key, std::string value);
+		map<string, string> Params;
+		void SetParamValue(string key, string value);
 
 	protected:
-		Animation* CurrentAnimation;
-		std::multimap<Animation*, AnimationTransition> AnimationMap;
+		shared_ptr<Animation> CurrentAnimation;
+		multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>> AnimationMap;
 	private:
-		Animation* GetNextAnimation();
+		shared_ptr<Animation> GetNextAnimation();
 	};
 }

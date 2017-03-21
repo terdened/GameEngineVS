@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Animation.h"
+#include <memory>
+
+using namespace std;
 
 namespace GameEngine {
 	enum AnimaitonTransitionType {
@@ -11,18 +14,20 @@ namespace GameEngine {
 	class AnimationTransition 
 	{
 	public:
-		AnimationTransition (AnimaitonTransitionType type, Animation* nextAnimaiton): Type(type), NextAnimaiton(nextAnimaiton)
+		AnimationTransition (AnimaitonTransitionType type, shared_ptr<Animation> nextAnimaiton): Type(type), NextAnimaiton(nextAnimaiton)
 			{	}
 
-		bool(*Condition)(std::map<std::string, std::string> params);
-		Animation* GetNextAnimation() {
+		shared_ptr<Animation> GetNextAnimation() {
 			return NextAnimaiton;
 		}
-		bool IsActive(std::map<std::string, std::string> params, bool IsAnimationEnded) {
+
+		bool(*Condition)(map<string, string> params);
+
+		bool IsActive(map<string, string> params, bool IsAnimationEnded) {
 			return ((IsAnimationEnded && Type == WaitUntilAnimationEnd) || Type == Immediately) && (Condition(params));
 		}
 	private:
 		AnimaitonTransitionType Type;
-		Animation* NextAnimaiton;
+		shared_ptr<Animation> NextAnimaiton;
 	};
 }

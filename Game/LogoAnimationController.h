@@ -7,8 +7,9 @@ namespace GameEngine {
 	class LogoAnimationController : public AnimationController {
 	public:
 		LogoAnimationController() {
-			auto walkAroundFieldAnimation = new WalkAroundFieldAnimation();
+			auto walkAroundFieldAnimation = std::make_shared<WalkAroundFieldAnimation>();
 			CurrentAnimation = walkAroundFieldAnimation;
+			CurrentAnimation->Play();
 		}
 	};
 }

@@ -7,7 +7,7 @@
 namespace GameEngine {
 
 	void AnimationController::Update() {
-		Animation* nextAnimation = GetNextAnimation();
+		auto nextAnimation = GetNextAnimation();
 
 		if (nextAnimation != nullptr) {
 			CurrentAnimation = nextAnimation;
@@ -19,22 +19,22 @@ namespace GameEngine {
 	}
 
 
-	void AnimationController::SetParamValue(std::string key, std::string value) {
-		std::map<std::string, std::string>::iterator it = Params.find(key);
+	void AnimationController::SetParamValue(string key, string value) {
+		auto it = Params.find(key);
 		if (it != Params.end())
 			it->second = value;
 		else
-			Params.insert(std::make_pair(key, value));
+			Params.insert(make_pair(key, value));
 	}
 
-	Animation* AnimationController::GetNextAnimation() {
-		std::pair <std::multimap<Animation*, AnimationTransition>::iterator, std::multimap<Animation*, AnimationTransition>::iterator> ret;
+	shared_ptr<Animation> AnimationController::GetNextAnimation() {
+		pair <multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>>::iterator, multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>>::iterator> ret;
 		ret = AnimationMap.equal_range(CurrentAnimation);
 		auto IsAnimationEnded = CurrentAnimation->State() == AnimationState::Ended;
 
 		for (auto it = ret.first; it != ret.second; ++it) {
-			if (it->second.IsActive(Params, IsAnimationEnded))
-				return it->second.GetNextAnimation();
+			if (it->second->IsActive(Params, IsAnimationEnded))
+				return it->second->GetNextAnimation();
 		}
 
 		return nullptr;
