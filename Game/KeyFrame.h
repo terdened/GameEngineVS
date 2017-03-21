@@ -2,14 +2,18 @@
 
 
 #include "stdafx.h"
+#include "TransformData.h"
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine {
+	enum KeyFrameType {
+		Static, 
+		TransformAnimation
+	};
+
 	struct KeyFrame {
 		int FrameNumber;
-		sf::Transform Transform;
-		float Rotation;
-		sf::Vector2f Scale;
-		sf::Vector2f Position;
+		TransformData TransformData;
+		KeyFrameType Type;
 	};
 }

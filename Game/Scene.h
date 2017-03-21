@@ -15,7 +15,7 @@ using namespace std;
 namespace GameEngine {
     class Scene {
     private:
-        list<GameObject*> childs;
+		vector<shared_ptr<GameObject>> childs;
     protected:
         ResourceManager* resourceManager;
         sf::RenderWindow& renderWindow;
@@ -26,7 +26,7 @@ namespace GameEngine {
         void Draw();
         virtual void Update();
         virtual void Init() = 0;
-        void AddChild(GameObject* child);
+        void AddChild(shared_ptr<GameObject> child);
     };
 }
 

@@ -53,9 +53,6 @@ namespace GameEngine {
 
 		auto resultFrame = KeyFrame();
 
-		//auto activeFrameMatrix = activeFrame.Transform.getMatrix();
-		//auto nextFrameMatrix = nextFrame.Transform.getMatrix();
-
 		auto deltaPosition = (nextFrame.TransformData.Position - activeFrame.TransformData.Position);
 		deltaPosition.x  = deltaPosition.x * currentKeyFramePosition / currentKeyFrameDuration;
 		deltaPosition.y  = deltaPosition.y * currentKeyFramePosition /currentKeyFrameDuration;
@@ -66,16 +63,11 @@ namespace GameEngine {
 
 		auto deltaRotation = (nextFrame.TransformData.Rotation - activeFrame.TransformData.Rotation) * currentKeyFramePosition / currentKeyFrameDuration;
 
-		//auto incrementMatrix = SubdivideMatrix(SubMatrix(nextFrameMatrix, activeFrameMatrix), currentKeyFrameDuration);
-
-
 		auto currentFrame = KeyFrame();
 
 		currentFrame.TransformData.Position = activeFrame.TransformData.Position + deltaPosition;
 		currentFrame.TransformData.Scale = activeFrame.TransformData.Scale + deltaScale;
 		currentFrame.TransformData.Rotation = activeFrame.TransformData.Rotation + deltaRotation;
-
-		//auto currentTransformMatrix = AddMatrix(activeFrame.Transform.getMatrix(), MultiplyMatrix(incrementMatrix, currentKeyFramePosition));
 		
 		CurrentTransform = currentFrame;
 	}

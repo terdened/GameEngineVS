@@ -6,18 +6,23 @@
 #include "Scene.h"
 namespace GameEngine {
     void Scene::Draw() {
-        list<GameObject*>::iterator gameObjectIter;
+        vector<shared_ptr<GameObject>>::iterator gameObjectIter;
+		sort(childs.begin(), childs.end(), 
+			[](const shared_ptr<GameObject> &lhs, const shared_ptr<GameObject> &rhs) {
+				return lhs->Depth() < rhs->Depth();
+		});
+
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
-            (**gameObjectIter).Draw(sf::Transform());
+            (*gameObjectIter)->Draw(TransformData());
     }
 
     void Scene::Update() {
-        list<GameObject*>::iterator gameObjectIter;
+		vector<shared_ptr<GameObject>>::iterator gameObjectIter;
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
-            (**gameObjectIter).Update();
+            (*gameObjectIter)->Update();
     }
 
-    void Scene::AddChild(GameObject* child) {
+    void Scene::AddChild(shared_ptr<GameObject> child) {
         child->Init(resourceManager);
         childs.push_back(child);
     }
