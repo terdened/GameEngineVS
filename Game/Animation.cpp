@@ -7,65 +7,40 @@ using namespace std;
 
 namespace GameEngine {
 
-	float* AddMatrix(const float* a, const float* b) {
-		auto c = new float[16];
-
-		for (int i = 0; i < 16; i++) {
-			c[i] = a[i] + b[i];
-		}
-
-		return c;
+	void Animation::Play() {
+		state = AnimationState::Played;
 	}
 
-	float* SubMatrix(const float* a, const float* b) {
-		auto c = new float[16];
-
-		for (int i = 0; i < 16; i++) {
-			c[i] = a[i] - b[i];
-		}
-
-		return c;
+	void Animation::Stop() {
+		CurrentFrame = 0;
+		state = AnimationState::Stoped;
 	}
 
-	float* SubdivideMatrix(const float* a, float b) {
-		auto c = new float[16];
-
-		for (int i = 0; i < 16; i++) {
-			c[i] = a[i] / b;
-		}
-
-		return c;
-	}
-
-	float* MultiplyMatrix(const float* a, float b) {
-		auto c = new float[16];
-
-		for (int i = 0; i < 16; i++) {
-			c[i] = a[i] * b;
-		}
-
-		return c;
-	}
-
-	sf::Transform GetTransformBasedOnFrame(KeyFrame frame, float pivotX, float pivotY) {
-		auto result = sf::Transform();
-		result.translate(frame.Position);
-		result.scale(frame.Scale);
-		result.rotate(frame.Rotation, pivotX, pivotY);
-		return result;
+	void Animation::Pause() {
+		state = AnimationState::Paused;
 	}
 
 	void Animation::Update() {
+		if ((state != AnimationState::Played && !IsRepeat) || (state != AnimationState::Played && state != AnimationState::Ended && IsRepeat))
+			return;
+
 		CurrentFrame++;
 
-		if (CurrentFrame > Duration) {
-			if (IsRepeat)
-				CurrentFrame = 1;
-			else
-				return;
+		if (CurrentFrame >= Duration) {
+			CurrentFrame = 0;
+			state = AnimationState::Ended;
+
+			return;
 		}
 
 		auto activeFrame = GetActiveKeyFrame(CurrentFrame);
+		
+		if (activeFrame.Type == KeyFrameType::Static) {
+			CurrentTransform = activeFrame;
+			return;
+		}
+
+
 		auto nextFrame = GetNextKeyFrame(CurrentFrame);
 		
 		int currentKeyFrameDuration = nextFrame.FrameNumber - activeFrame.FrameNumber;
@@ -81,24 +56,24 @@ namespace GameEngine {
 		//auto activeFrameMatrix = activeFrame.Transform.getMatrix();
 		//auto nextFrameMatrix = nextFrame.Transform.getMatrix();
 
-		auto deltaPosition = (nextFrame.Position - activeFrame.Position);
+		auto deltaPosition = (nextFrame.TransformData.Position - activeFrame.TransformData.Position);
 		deltaPosition.x  = deltaPosition.x * currentKeyFramePosition / currentKeyFrameDuration;
 		deltaPosition.y  = deltaPosition.y * currentKeyFramePosition /currentKeyFrameDuration;
 
-		auto deltaScale = (nextFrame.Scale - activeFrame.Scale);
+		auto deltaScale = (nextFrame.TransformData.Scale - activeFrame.TransformData.Scale);
 		deltaScale.x = deltaScale.x * currentKeyFramePosition / currentKeyFrameDuration;
 		deltaScale.y = deltaScale.y * currentKeyFramePosition / currentKeyFrameDuration;
 
-		auto deltaRotation = (nextFrame.Rotation - activeFrame.Rotation) * currentKeyFramePosition / currentKeyFrameDuration;
+		auto deltaRotation = (nextFrame.TransformData.Rotation - activeFrame.TransformData.Rotation) * currentKeyFramePosition / currentKeyFrameDuration;
 
 		//auto incrementMatrix = SubdivideMatrix(SubMatrix(nextFrameMatrix, activeFrameMatrix), currentKeyFrameDuration);
 
 
 		auto currentFrame = KeyFrame();
 
-		currentFrame.Position = activeFrame.Position + deltaPosition;
-		currentFrame.Scale = activeFrame.Scale + deltaScale;
-		currentFrame.Rotation = activeFrame.Rotation + deltaRotation;
+		currentFrame.TransformData.Position = activeFrame.TransformData.Position + deltaPosition;
+		currentFrame.TransformData.Scale = activeFrame.TransformData.Scale + deltaScale;
+		currentFrame.TransformData.Rotation = activeFrame.TransformData.Rotation + deltaRotation;
 
 		//auto currentTransformMatrix = AddMatrix(activeFrame.Transform.getMatrix(), MultiplyMatrix(incrementMatrix, currentKeyFramePosition));
 		

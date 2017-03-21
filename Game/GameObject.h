@@ -11,15 +11,16 @@
 #include "ResourceManager.h"
 #include "Silhouette.h"
 #include "Animation.h"
+#include "AnimationController.h"
 
 using namespace std;
 
 namespace GameEngine {
     class GameObject {
     private:
-        list<shared_ptr<sf::Drawable>> shapes;
-        list<shared_ptr<GameObject>> childs;
-        list<shared_ptr<Silhouette>> silhouettes;
+		vector<shared_ptr<sf::Drawable>> shapes;
+        vector<shared_ptr<GameObject>> childs;
+		vector<shared_ptr<Silhouette>> silhouettes;
         float rotation;
         float scaleX;
         float scaleY;
@@ -40,16 +41,16 @@ namespace GameEngine {
 		virtual void OnPressed();
 		virtual void OnMouseOn();
 		virtual void OnMouseOff();
-		Animation* animation;
+		AnimationController* animationController;
     public:
         //creation functions
         GameObject(sf::RenderWindow& app): renderWindow(app), x(0), y(0), depth(0), name("untitled"), rotation(0),
-                                           scaleX(1), scaleY(1), pivotX(0), pivotY(0), isMouseOn(false), animation(nullptr)
+                                           scaleX(1), scaleY(1), pivotX(0), pivotY(0), isMouseOn(false), animationController(nullptr)
             {    }
         virtual void Init(ResourceManager* resourceManager) = 0;
 
         //time erase functions
-        void Draw(sf::Transform parentTransform);
+        void Draw(TransformData parentTransformData);
         virtual void Update();
 
         //structure functions
@@ -58,21 +59,38 @@ namespace GameEngine {
         void AddSilhouette(shared_ptr<Silhouette> silhouette);
 
         //field accessors
+		float GlobalX() {
+			if (parent == nullptr)
+				return  x;
+			return parent->x + x;
+		}
+		float GlobalY() {
+			if (parent == nullptr)
+				return  y;
+			return parent->y + y;
+		}
+
+		float GlobalRotation() {
+			if (parent == nullptr)
+				return  rotation;
+			return parent->rotation + rotation;
+		}
+		float GlobalScaleX() {
+			if (parent == nullptr)
+				return  scaleX;
+			return parent->scaleX * scaleX;
+		}
+		float GlobalScaleY() {
+			if (parent == nullptr)
+				return  scaleY;
+			return parent->scaleY * scaleY;
+		}
+
         float X() {
             return x;
         }
         void X(float value) {
             x = value;
-        }
-        float GlobalX() {
-            if(parent == nullptr)
-                return  x;
-            return parent->x + x;
-        }
-        float GlobalY() {
-            if(parent == nullptr)
-                return  y;
-            return parent->y + y;
         }
         void Parent(GameObject* parent){
             this->parent = parent;
@@ -138,9 +156,10 @@ namespace GameEngine {
         void SetPivotPoint(sf::Vector2f pivotPoint);
         bool IsMouseOn();
 
-		void PlayAnimation(Animation* animation) {
-			this->animation = animation;
-		}
+		//void PlayAnimation(Animation* animation) {
+			//delete this->animation;
+			//this->animation = animation;
+		//}
     };
 }
 

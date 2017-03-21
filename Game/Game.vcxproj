@@ -146,14 +146,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationController.h" />
+    <ClInclude Include="AnimationTransition.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="FontResource.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="KeyFrame.h" />
     <ClInclude Include="Logo.h" />
+    <ClInclude Include="LogoAnimationController.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MainSceneResourceLoader.h" />
+    <ClInclude Include="MouseOnTileAnimation.h" />
+    <ClInclude Include="MouseOutTileAnimation.h" />
     <ClInclude Include="RectangularSilhouette.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceLoader.h" />
@@ -164,9 +169,15 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextureResource.h" />
+    <ClInclude Include="TileAnimationController.h" />
+    <ClInclude Include="TileIdleAnimation.h" />
+    <ClInclude Include="TileShakeAnimation.h" />
+    <ClInclude Include="TransformData.h" />
+    <ClInclude Include="WalkAroundFieldAnimation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationController.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FontResource.cpp" />
