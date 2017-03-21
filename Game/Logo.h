@@ -15,6 +15,7 @@ public:
 	Logo(sf::RenderWindow& app, string resourceName) : SpriteGameObject(app, resourceName)
 		{	}
     void Update();
+	void Init(ResourceManager* resourceManager);
 };
 
 

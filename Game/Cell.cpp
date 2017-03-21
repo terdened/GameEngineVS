@@ -7,6 +7,7 @@
 #include "RectangularSilhouette.h"
 #include "MouseOnTileAnimation.h"
 #include "MouseOutTileAnimation.h"
+#include "TileAnimationController.h"
 #include <sstream>
 
 using namespace sf;
@@ -24,6 +25,8 @@ void Cell::Update() {
 
 void Cell::Init(ResourceManager* resourceManager) {
     this->resourceManager = resourceManager;
+	animationController = new TileAnimationController();
+
     tile = std::make_shared<RectangleShape>();
     tile->setPosition(3, 3);
     Vector2f size(94, 94);
@@ -64,13 +67,13 @@ void Cell::OnMouseOff() {
 void Cell::BrushInRed(){
 	Depth(100);
 	tile->setFillColor(Color(200, 30, 30));
-	PlayAnimation(new MouseOnTileAnimation());
+	animationController->SetParamValue("State", "1");
 }
 
 void Cell::BrushInCellColor() {
 	Depth(0);
 	tile->setFillColor(GetColor(value));
-	PlayAnimation(new MouseOutTileAnimation());
+	animationController->SetParamValue("State", "0");
 }
 
 Color Cell::GetColor(int value){

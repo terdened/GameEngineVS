@@ -7,14 +7,30 @@ using namespace std;
 
 namespace GameEngine {
 
+	void Animation::Play() {
+		state = AnimationState::Played;
+	}
+
+	void Animation::Stop() {
+		CurrentFrame = 0;
+		state = AnimationState::Stoped;
+	}
+
+	void Animation::Pause() {
+		state = AnimationState::Paused;
+	}
+
 	void Animation::Update() {
+		if ((state != AnimationState::Played && !IsRepeat) || (state != AnimationState::Played && state != AnimationState::Ended && IsRepeat))
+			return;
+
 		CurrentFrame++;
 
-		if (CurrentFrame > Duration) {
-			if (IsRepeat)
-				CurrentFrame = 1;
-			else
-				return;
+		if (CurrentFrame >= Duration) {
+			CurrentFrame = 0;
+			state = AnimationState::Ended;
+
+			return;
 		}
 
 		auto activeFrame = GetActiveKeyFrame(CurrentFrame);
@@ -26,6 +42,7 @@ namespace GameEngine {
 
 
 		auto nextFrame = GetNextKeyFrame(CurrentFrame);
+		
 		int currentKeyFrameDuration = nextFrame.FrameNumber - activeFrame.FrameNumber;
 		int currentKeyFramePosition = CurrentFrame - activeFrame.FrameNumber;
 

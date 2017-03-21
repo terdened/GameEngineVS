@@ -11,6 +11,7 @@
 #include "ResourceManager.h"
 #include "Silhouette.h"
 #include "Animation.h"
+#include "AnimationController.h"
 
 using namespace std;
 
@@ -40,11 +41,11 @@ namespace GameEngine {
 		virtual void OnPressed();
 		virtual void OnMouseOn();
 		virtual void OnMouseOff();
-		Animation* animation;
+		AnimationController* animationController;
     public:
         //creation functions
         GameObject(sf::RenderWindow& app): renderWindow(app), x(0), y(0), depth(0), name("untitled"), rotation(0),
-                                           scaleX(1), scaleY(1), pivotX(0), pivotY(0), isMouseOn(false), animation(nullptr)
+                                           scaleX(1), scaleY(1), pivotX(0), pivotY(0), isMouseOn(false), animationController(nullptr)
             {    }
         virtual void Init(ResourceManager* resourceManager) = 0;
 
@@ -155,10 +156,10 @@ namespace GameEngine {
         void SetPivotPoint(sf::Vector2f pivotPoint);
         bool IsMouseOn();
 
-		void PlayAnimation(Animation* animation) {
-			delete this->animation;
-			this->animation = animation;
-		}
+		//void PlayAnimation(Animation* animation) {
+			//delete this->animation;
+			//this->animation = animation;
+		//}
     };
 }
 

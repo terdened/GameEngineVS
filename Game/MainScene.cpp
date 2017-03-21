@@ -29,5 +29,5 @@ void MainScene::Init() {
     auto logo = std::make_shared<Logo>(renderWindow, "logo");
     AddChild(logo);
     logo->SetScale(sf::Vector2f(0.5f, 0.5f));
-	logo->PlayAnimation(new WalkAroundFieldAnimation());
+	//logo->PlayAnimation(new WalkAroundFieldAnimation());
 }

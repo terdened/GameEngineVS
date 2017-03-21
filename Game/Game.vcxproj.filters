@@ -114,6 +114,24 @@
     <ClInclude Include="MouseOutTileAnimation.h">
       <Filter>Source Files\Animations</Filter>
     </ClInclude>
+    <ClInclude Include="AnimationTransition.h">
+      <Filter>Source Files\Core\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationController.h">
+      <Filter>Source Files\Core\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="TileAnimationController.h">
+      <Filter>Source Files\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="TileIdleAnimation.h">
+      <Filter>Source Files\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="TileShakeAnimation.h">
+      <Filter>Source Files\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoAnimationController.h">
+      <Filter>Source Files\Animations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -168,6 +186,9 @@
       <Filter>Source Files\Core\Structure</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
+      <Filter>Source Files\Core\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationController.cpp">
       <Filter>Source Files\Core\Animation</Filter>
     </ClCompile>
   </ItemGroup>

@@ -15,11 +15,14 @@ namespace GameEngine {
 		accTransform.Position = sf::Vector2f(x + parentTransformData.Position.x, y + parentTransformData.Position.y);
 		accTransform.Scale = sf::Vector2f(scaleX * parentTransformData.Scale.x, scaleY * parentTransformData.Scale.y);
 
-		if (animation != nullptr) {
-			accTransform.Rotation += animation->GetCurrentTransform().TransformData.Rotation;
-			accTransform.Position += animation->GetCurrentTransform().TransformData.Position;
-			accTransform.Scale.x *= animation->GetCurrentTransform().TransformData.Scale.x;
-			accTransform.Scale.y *= animation->GetCurrentTransform().TransformData.Scale.y;
+		if (animationController != nullptr) {
+			auto animation = animationController->GetCurrentAnimation();
+			if (animation != nullptr) {
+				accTransform.Rotation += animation->GetCurrentTransform().TransformData.Rotation;
+				accTransform.Position += animation->GetCurrentTransform().TransformData.Position;
+				accTransform.Scale.x *= animation->GetCurrentTransform().TransformData.Scale.x;
+				accTransform.Scale.y *= animation->GetCurrentTransform().TransformData.Scale.y;
+			}
 		}
 
         transform.translate(accTransform.Position.x, accTransform.Position.y);
@@ -50,8 +53,8 @@ namespace GameEngine {
         for (iter = childs.begin(); iter != childs.end(); iter++)
             (**iter).Update();
 
-		if (animation != nullptr)
-			animation->Update();
+		if (animationController != nullptr)
+			animationController->Update();
 
 		auto isMouseOnObject = IsMouseOn();
 		HandleMouseOnEvent(isMouseOnObject);
