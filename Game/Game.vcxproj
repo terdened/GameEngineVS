@@ -153,8 +153,6 @@
     <ClInclude Include="FontResource.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="KeyFrame.h" />
-    <ClInclude Include="Logo.h" />
-    <ClInclude Include="LogoAnimationController.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MainSceneResourceLoader.h" />
     <ClInclude Include="MouseOnTileAnimation.h" />
@@ -173,7 +171,6 @@
     <ClInclude Include="TileIdleAnimation.h" />
     <ClInclude Include="TileShakeAnimation.h" />
     <ClInclude Include="TransformData.h" />
-    <ClInclude Include="WalkAroundFieldAnimation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
@@ -183,7 +180,6 @@
     <ClCompile Include="FontResource.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Logo.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MainSceneResourceLoader.cpp" />
     <ClCompile Include="RectangularSilhouette.cpp" />

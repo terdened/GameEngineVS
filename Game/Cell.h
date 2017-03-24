@@ -12,11 +12,12 @@ using namespace GameEngine;
 
 class Cell : public GameObject {
 private:
-    int value;
     sf::Color GetColor(int value);
     shared_ptr<sf::RectangleShape> tile;
 	void BrushInRed();
 	void BrushInCellColor();
+	void Move(int direction);
+	void PlayMoveAnimation(int direction);
 protected:
 	void OnMouseOn();
 	void OnMouseOff();
@@ -25,6 +26,10 @@ public:
         { }
     void Update();
     void Init(ResourceManager* resourceManager);
+	int PositionX;
+	int PositionY;
+	void SetCellPosition(int x, int y);
+	int value;
 };
 
 

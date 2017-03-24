@@ -7,9 +7,7 @@
 
 #include "Field.h"
 #include "ResourceManager.h"
-#include "Logo.h"
 #include "MainSceneResourceLoader.h"
-#include "WalkAroundFieldAnimation.h"
 
 using namespace sf;
 
@@ -23,11 +21,6 @@ void MainScene::Init() {
     resourceLoader->Load();
 
     auto field = std::make_shared<Field>(renderWindow);
-    field->SetPosition(sf::Vector2f(350, 150));
+    field->SetPosition(sf::Vector2f(350, 50));
     AddChild(field);
-
-    auto logo = std::make_shared<Logo>(renderWindow, "logo");
-    AddChild(logo);
-    logo->SetScale(sf::Vector2f(0.5f, 0.5f));
-	//logo->PlayAnimation(new WalkAroundFieldAnimation());
 }

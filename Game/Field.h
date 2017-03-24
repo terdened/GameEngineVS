@@ -6,15 +6,20 @@
 #define GAME_FIELD_H
 
 #include "GameObject.h"
+#include "Cell.h"
 
 using namespace GameEngine;
 
-class Field : public GameObject{
+class Field : public GameObject {
 public:
     Field(sf::RenderWindow& app): GameObject(app)
             { }
     void Update();
     void Init(ResourceManager* resourceManager);
+private:
+	std::vector<shared_ptr<Cell>> cells;
+	int ColumnsNumber;
+	int RowsNumber;
 };
 
 

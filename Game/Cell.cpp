@@ -76,6 +76,27 @@ void Cell::BrushInCellColor() {
 	animationController->SetParamValue("State", "0");
 }
 
+void Cell::SetCellPosition(int x, int y) {
+	PositionX = x;
+	PositionY = y;
+	SetPosition(sf::Vector2f(x*100, y*100));
+}
+
+void Cell::Move(int direction) {
+	
+}
+
+void Cell::PlayMoveAnimation(int direction) {
+	if (direction == 1)
+		animationController->SetParamValue("State", "2");
+	if (direction == 2)
+		animationController->SetParamValue("State", "3");
+	if (direction == 3)
+		animationController->SetParamValue("State", "4");
+	if (direction == 4)
+		animationController->SetParamValue("State", "5");
+}
+
 Color Cell::GetColor(int value){
     switch (value){
         case 2:
