@@ -17,6 +17,7 @@ public:
     void Update();
     void Init(ResourceManager* resourceManager);
 private:
+	shared_ptr<Cell> CreateCellForPosition(sf::RenderWindow& renderWindow, int x, int y);
 	std::vector<shared_ptr<Cell>> cells;
 	int ColumnsNumber;
 	int RowsNumber;

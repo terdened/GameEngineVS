@@ -37,7 +37,7 @@ void Field::Init(ResourceManager* resourceManager) {
 	}
 }
 
-shared_ptr<Cell> CreateCellForPosition(sf::RenderWindow& renderWindow, int x, int y) {
+shared_ptr<Cell> Field::CreateCellForPosition(sf::RenderWindow& renderWindow, int x, int y) {
 	auto cell = std::make_shared<Cell>(renderWindow);
 	cell->SetCellPosition(x, y);
 	return cell;
