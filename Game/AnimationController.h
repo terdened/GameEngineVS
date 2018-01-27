@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace GameEngine {
+namespace gameengine {
 
 	class AnimationController {
 	public: 

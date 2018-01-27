@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace GameEngine {
+namespace gameengine {
 	enum AnimaitonTransitionType {
 		WaitUntilAnimationEnd,
 		Immediately

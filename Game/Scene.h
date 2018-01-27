@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace GameEngine {
+namespace gameengine {
     class Scene {
     private:
 		vector<shared_ptr<GameObject>> childs;

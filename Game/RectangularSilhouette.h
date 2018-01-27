@@ -8,7 +8,7 @@
 
 #include "Silhouette.h"
 
-namespace GameEngine{
+namespace gameengine{
     class RectangularSilhouette: public Silhouette {
     protected:
         float width;

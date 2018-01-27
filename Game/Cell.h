@@ -8,7 +8,7 @@
 #include "GameObject.h"
 #include "ResourceManager.h"
 
-using namespace GameEngine;
+using namespace gameengine;
 
 class Cell : public GameObject {
 private:

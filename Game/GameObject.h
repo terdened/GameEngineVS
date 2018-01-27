@@ -15,42 +15,52 @@
 
 using namespace std;
 
-namespace GameEngine {
+namespace gameengine {
     class GameObject {
     private:
 		vector<shared_ptr<sf::Drawable>> shapes;
         vector<shared_ptr<GameObject>> childs;
 		vector<shared_ptr<Silhouette>> silhouettes;
         float rotation;
-        float scaleX;
-        float scaleY;
+        float scale_x;
+        float scale_y;
         int depth;
         string name;
-        float pivotX;
-        float pivotY;
-        bool isMouseOn;
-        void HandleMouseOnEvent(bool isMouseOnObject);
-        void HandleOnClickEvent(bool isMouseOnObject);
-        void HandleMouseOutEvent(bool isMouseOnObject);
+        float pivot_x;
+        float pivot_y;
+        bool is_mouse_on;
+        void HandleMouseOnEvent(bool is_mouse_on_object);
+        void HandleOnClickEvent(bool is_mouse_on_object);
+        void HandleMouseOutEvent(bool is_mouse_on_object);
     protected:
         GameObject* parent = nullptr;
         float x;
         float y;
-        sf::RenderWindow& renderWindow;
-        ResourceManager* resourceManager;
+        sf::RenderWindow& render_window;
+        ResourceManager* resource_manager;
 		virtual void OnPressed();
 		virtual void OnMouseOn();
 		virtual void OnMouseOff();
-		AnimationController* animationController;
+		AnimationController* animation_controller;
     public:
-        //creation functions
-        GameObject(sf::RenderWindow& app): renderWindow(app), x(0), y(0), depth(0), name("untitled"), rotation(0),
-                                           scaleX(1), scaleY(1), pivotX(0), pivotY(0), isMouseOn(false), animationController(nullptr)
-            {    }
-        virtual void Init(ResourceManager* resourceManager) = 0;
+        GameObject(sf::RenderWindow& app)
+			: render_window(app), 
+			  x(0), 
+			  y(0), 
+			  depth(0), 
+			  name("untitled"), 
+			  rotation(0),
+              scale_x(1), 
+			  scale_y(1), 
+			  pivot_x(0), 
+			  pivot_y(0), 
+			  is_mouse_on(false), 
+			  animation_controller(nullptr) {}
+
+        virtual void Init(ResourceManager* resource_manager) = 0;
 
         //time erase functions
-        void Draw(TransformData parentTransformData);
+        void Draw(TransformData parent_transform_data);
         virtual void Update();
 
         //structure functions
@@ -77,13 +87,13 @@ namespace GameEngine {
 		}
 		float GlobalScaleX() {
 			if (parent == nullptr)
-				return  scaleX;
-			return parent->scaleX * scaleX;
+				return  scale_x;
+			return parent->scale_x * scale_x;
 		}
 		float GlobalScaleY() {
 			if (parent == nullptr)
-				return  scaleY;
-			return parent->scaleY * scaleY;
+				return  scale_y;
+			return parent->scale_y * scale_y;
 		}
 
         float X() {
@@ -108,30 +118,30 @@ namespace GameEngine {
             rotation = value;
         }
         float ScaleX() {
-            return scaleX;
+            return scale_x;
         }
         void ScaleX(float value) {
-            scaleX = value;
+            scale_x = value;
         }
         float ScaleY() {
-            return scaleY;
+            return scale_y;
         }
         void ScaleY(float value) {
-            scaleY = value;
+            scale_y = value;
         }
 
         float PivotX() {
-            return pivotX;
+            return pivot_x;
         }
         void PivotX(float value) {
-            pivotX = value;
+            pivot_x = value;
         }
 
         float PivotY() {
-            return pivotY;
+            return pivot_y;
         }
         void PivotY(float value) {
-            pivotY = value;
+            pivot_y = value;
         }
 
         int Depth() {
@@ -149,11 +159,11 @@ namespace GameEngine {
 
         //Modificators
         void Move(sf::Vector2f delta);
-        void SwapDepth(GameObject* gameObject);
-        void SetPosition(sf::Vector2f newPosition);
+        void SwapDepth(GameObject* game_object);
+        void SetPosition(sf::Vector2f new_position);
         void Rotate(float value);
         void SetScale(sf::Vector2f scale);
-        void SetPivotPoint(sf::Vector2f pivotPoint);
+        void SetPivotPoint(sf::Vector2f pivot_point);
         bool IsMouseOn();
 
 		//void PlayAnimation(Animation* animation) {

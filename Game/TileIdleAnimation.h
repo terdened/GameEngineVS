@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "Animation.h"
 
-using  namespace GameEngine;
+using  namespace gameengine;
 
 class TileIdleAnimation : public Animation {
 public:

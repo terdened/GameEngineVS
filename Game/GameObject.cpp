@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "GameObject.h"
 
-namespace GameEngine {
+namespace gameengine {
 
     void GameObject::Draw(TransformData parentTransformData) {
         sf::Transform transform;
@@ -13,10 +13,10 @@ namespace GameEngine {
 		TransformData accTransform;
 		accTransform.Rotation = rotation + parentTransformData.Rotation;
 		accTransform.Position = sf::Vector2f(x + parentTransformData.Position.x, y + parentTransformData.Position.y);
-		accTransform.Scale = sf::Vector2f(scaleX * parentTransformData.Scale.x, scaleY * parentTransformData.Scale.y);
+		accTransform.Scale = sf::Vector2f(scale_x * parentTransformData.Scale.x, scale_y * parentTransformData.Scale.y);
 
-		if (animationController != nullptr) {
-			auto animation = animationController->GetCurrentAnimation();
+		if (animation_controller != nullptr) {
+			auto animation = animation_controller->GetCurrentAnimation();
 			if (animation != nullptr) {
 				accTransform.Rotation += animation->GetCurrentTransform().TransformData.Rotation;
 				accTransform.Position += animation->GetCurrentTransform().TransformData.Position;
@@ -26,15 +26,15 @@ namespace GameEngine {
 		}
 
         transform.translate(accTransform.Position.x, accTransform.Position.y);
-        transform.rotate(accTransform.Rotation, pivotX, pivotY);
-        transform.scale(accTransform.Scale.x, accTransform.Scale.y, pivotX, pivotY);
+        transform.rotate(accTransform.Rotation, pivot_x, pivot_y);
+        transform.scale(accTransform.Scale.x, accTransform.Scale.y, pivot_x, pivot_y);
 
 
         sf::RenderStates renderStates(transform);
 
 		vector<shared_ptr<sf::Drawable>>::iterator shapeIter;
         for (shapeIter = shapes.begin(); shapeIter != shapes.end(); shapeIter++)
-            renderWindow.draw(**shapeIter, renderStates);
+            render_window.draw(**shapeIter, renderStates);
 
 		sort(childs.begin(), childs.end(),
 			[](const shared_ptr<GameObject> &lhs, const shared_ptr<GameObject> &rhs) {
@@ -53,8 +53,8 @@ namespace GameEngine {
         for (iter = childs.begin(); iter != childs.end(); iter++)
             (**iter).Update();
 
-		if (animationController != nullptr)
-			animationController->Update();
+		if (animation_controller != nullptr)
+			animation_controller->Update();
 
 		auto isMouseOnObject = IsMouseOn();
 		HandleMouseOnEvent(isMouseOnObject);
@@ -63,7 +63,7 @@ namespace GameEngine {
     }
 
     void GameObject::AddChild(shared_ptr<GameObject> child) {
-        child->Init(resourceManager);
+        child->Init(resource_manager);
         child->Parent(this);
         childs.push_back(child);
     }
@@ -93,13 +93,13 @@ namespace GameEngine {
     }
 
     void GameObject::SetScale(sf::Vector2f scale) {
-        scaleX = scale.x;
-        scaleY = scale.y;
+        scale_x = scale.x;
+        scale_y = scale.y;
     }
 
     void GameObject::SetPivotPoint(sf::Vector2f pivotPoint) {
-        pivotX = pivotPoint.x;
-        pivotY = pivotPoint.y;
+        pivot_x = pivotPoint.x;
+        pivot_y = pivotPoint.y;
     }
 
     void GameObject::AddSilhouette(shared_ptr<Silhouette> silhouette) {
@@ -109,28 +109,28 @@ namespace GameEngine {
     bool GameObject::IsMouseOn() {
 		vector<shared_ptr<Silhouette>>::iterator silhouetteIter;
         for (silhouetteIter = silhouettes.begin(); silhouetteIter != silhouettes.end(); silhouetteIter++)
-            if((*silhouetteIter)->IsMouseOn(renderWindow))
+            if((*silhouetteIter)->IsMouseOn(render_window))
                 return true;
 
         return false;
     }
 
     void GameObject::HandleMouseOnEvent(bool isMouseOnObject) {
-        if(!isMouseOn && isMouseOnObject) {
-			isMouseOn = true;
+        if(!is_mouse_on && isMouseOnObject) {
+			is_mouse_on = true;
 			OnMouseOn();
         }
     }
 
 	void GameObject::HandleOnClickEvent(bool isMouseOnObject) {
-		if (isMouseOn) {
+		if (is_mouse_on) {
 			
 		}
 	}
 
 	void GameObject::HandleMouseOutEvent(bool isMouseOnObject) {
-		if (isMouseOn && !isMouseOnObject) {
-			isMouseOn = false;
+		if (is_mouse_on && !isMouseOnObject) {
+			is_mouse_on = false;
 			OnMouseOff();
 		}
 	}

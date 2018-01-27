@@ -8,7 +8,7 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
-namespace GameEngine {
+namespace gameengine {
     class GameObject;
     class Silhouette {
     protected:

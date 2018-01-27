@@ -3,7 +3,7 @@
 #include "AnimationController.h"
 #include "WalkAroundFieldAnimation.h"
 
-namespace GameEngine {
+namespace gameengine {
 	class LogoAnimationController : public AnimationController {
 	public:
 		LogoAnimationController() {

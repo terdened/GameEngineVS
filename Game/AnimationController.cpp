@@ -4,7 +4,7 @@
 #include "AnimationController.h" 
 #include <string>
 
-namespace GameEngine {
+namespace gameengine {
 
 	void AnimationController::Update() {
 		auto nextAnimation = GetNextAnimation();

@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "ResourceManager.h"
 
-namespace GameEngine {
+namespace gameengine {
     void ResourceManager::EmptyList() {
         //resources.clear();
         //stack<unsigned int> empty;

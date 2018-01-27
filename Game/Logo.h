@@ -8,7 +8,7 @@
 #include "ResourceManager.h"
 #include "Sprite.h"
 
-using namespace GameEngine;
+using namespace gameengine;
 
 class Logo : public SpriteGameObject{
 public:

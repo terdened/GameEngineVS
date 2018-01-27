@@ -24,8 +24,8 @@ void Cell::Update() {
 }
 
 void Cell::Init(ResourceManager* resourceManager) {
-    this->resourceManager = resourceManager;
-	animationController = new TileAnimationController();
+    this->resource_manager = resourceManager;
+	animation_controller = new TileAnimationController();
 
     tile = std::make_shared<RectangleShape>();
     tile->setPosition(3, 3);
@@ -36,7 +36,7 @@ void Cell::Init(ResourceManager* resourceManager) {
     SetPivotPoint(Vector2f(50, 50));
 
     auto text = std::make_shared<Text>();
-    sf::Font* font = this->resourceManager->GetElement<FontResource>("font")->Font();
+    sf::Font* font = this->resource_manager->GetElement<FontResource>("font")->Font();
 
     text->setFont(*font);
 
@@ -67,13 +67,13 @@ void Cell::OnMouseOff() {
 void Cell::BrushInRed(){
 	Depth(100);
 	tile->setFillColor(Color(200, 30, 30));
-	animationController->SetParamValue("State", "1");
+	animation_controller->SetParamValue("State", "1");
 }
 
 void Cell::BrushInCellColor() {
 	Depth(0);
 	tile->setFillColor(GetColor(value));
-	animationController->SetParamValue("State", "0");
+	animation_controller->SetParamValue("State", "0");
 }
 
 Color Cell::GetColor(int value){

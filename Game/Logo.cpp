@@ -15,5 +15,5 @@ void Logo::Update() {
 
 void Logo::Init(ResourceManager* resourceManager) {
 	SpriteGameObject::Init(resourceManager);
-	animationController = new LogoAnimationController();
+	animation_controller = new LogoAnimationController();
 }

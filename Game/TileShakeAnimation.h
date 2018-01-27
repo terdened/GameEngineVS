@@ -1,7 +1,7 @@
 #pragma once
 #include "Animation.h"
 
-namespace GameEngine {
+namespace gameengine {
 	class TileShakeAnimation : public Animation {
 	public:
 		TileShakeAnimation() : Animation() {

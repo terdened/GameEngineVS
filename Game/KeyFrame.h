@@ -5,7 +5,7 @@
 #include "TransformData.h"
 #include <SFML/Graphics.hpp>
 
-namespace GameEngine {
+namespace gameengine {
 	enum KeyFrameType {
 		Static, 
 		TransformAnimation

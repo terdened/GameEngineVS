@@ -4,7 +4,7 @@
 #include "KeyFrame.h"
 #include <vector>
 
-namespace GameEngine {
+namespace gameengine {
 	enum AnimationState {
 		Played,
 		Paused,

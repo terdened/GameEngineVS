@@ -11,7 +11,7 @@
 #include <memory>
 #include "Resource.h"
 
-namespace GameEngine {
+namespace gameengine {
     class FontResource : public Resource {
     private:
         sf::Font* font;

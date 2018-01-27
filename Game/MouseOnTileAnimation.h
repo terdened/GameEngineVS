@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "Animation.h"
 
-using  namespace GameEngine;
+using  namespace gameengine;
 
 class MouseOnTileAnimation : public Animation {
 public:

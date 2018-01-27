@@ -7,7 +7,7 @@
 
 #include "Scene.h"
 
-using  namespace GameEngine;
+using  namespace gameengine;
 
 class MainScene : public Scene {
 

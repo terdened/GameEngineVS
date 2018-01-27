@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "Animation.h"
 
-using  namespace GameEngine;
+using  namespace gameengine;
 
 class WalkAroundFieldAnimation : public Animation {
 public:

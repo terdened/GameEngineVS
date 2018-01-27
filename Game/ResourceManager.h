@@ -14,7 +14,7 @@
 
 using namespace std;
 
-namespace GameEngine {
+namespace gameengine {
     class ResourceManager {
     private:
         void (*createResource)(Resource **, const unsigned int, const string &, const string &);

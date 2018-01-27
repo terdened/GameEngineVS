@@ -8,7 +8,7 @@
 
 using namespace sf;
 using namespace std;
-using namespace GameEngine;
+using namespace gameengine;
 
 int W = 1200;
 int H = 800;

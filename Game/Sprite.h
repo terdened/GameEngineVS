@@ -7,7 +7,7 @@
 
 #include "GameObject.h"
 
-namespace GameEngine {
+namespace gameengine {
     class SpriteGameObject : public GameObject {
     private:
         string resourceName;

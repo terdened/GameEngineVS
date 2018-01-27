@@ -7,7 +7,7 @@
 
 #include "ResourceLoader.h"
 
-using namespace GameEngine;
+using namespace gameengine;
 
 class MainSceneResourceLoader: public ResourceLoader {
 public:

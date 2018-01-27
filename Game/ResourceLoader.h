@@ -7,7 +7,7 @@
 
 #include "ResourceManager.h"
 
-namespace GameEngine {
+namespace gameengine {
     class ResourceLoader {
     protected:
         ResourceManager* resourceManager;

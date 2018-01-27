@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace GameEngine {
+namespace gameengine {
     class Resource {
     private:
         string filename;

@@ -7,7 +7,7 @@
 
 #include "GameObject.h"
 
-using namespace GameEngine;
+using namespace gameengine;
 
 class Field : public GameObject{
 public:

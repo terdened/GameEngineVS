@@ -7,7 +7,7 @@
 #include "RectangularSilhouette.h"
 #include "GameObject.h"
 
-namespace GameEngine {
+namespace gameengine {
     bool RectangularSilhouette::IsMouseOn(sf::RenderWindow& renderWindow) {
         float mouseX = sf::Mouse::getPosition(renderWindow).x;
         float mouseY = sf::Mouse::getPosition(renderWindow).y;

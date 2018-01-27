@@ -11,7 +11,7 @@
 #include <iostream>
 #include "Resource.h"
 
-namespace GameEngine {
+namespace gameengine {
     class TextureResource : public Resource {
     private:
         sf::Texture *texture;

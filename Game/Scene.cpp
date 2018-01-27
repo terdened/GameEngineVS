@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "Scene.h"
-namespace GameEngine {
+namespace gameengine {
     void Scene::Draw() {
         vector<shared_ptr<GameObject>>::iterator gameObjectIter;
 		sort(childs.begin(), childs.end(), 

@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
 
-namespace GameEngine {
+namespace gameengine {
 	struct TransformData {
 		sf::Vector2f Position;
 		sf::Vector2f Scale;
