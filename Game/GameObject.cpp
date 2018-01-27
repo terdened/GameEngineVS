@@ -6,29 +6,27 @@
 #include "GameObject.h"
 
 namespace gameengine {
-
-    void GameObject::Draw(TransformData parentTransformData) {
+    void GameObject::Draw(TransformData parent_transform_data) {
         sf::Transform transform;
 
-		TransformData accTransform;
-		accTransform.Rotation = rotation + parentTransformData.Rotation;
-		accTransform.Position = sf::Vector2f(x + parentTransformData.Position.x, y + parentTransformData.Position.y);
-		accTransform.Scale = sf::Vector2f(scale_x * parentTransformData.Scale.x, scale_y * parentTransformData.Scale.y);
+		TransformData acc_transform;
+		acc_transform.Rotation = rotation + parent_transform_data.Rotation;
+		acc_transform.Position = sf::Vector2f(x + parent_transform_data.Position.x, y + parent_transform_data.Position.y);
+		acc_transform.Scale = sf::Vector2f(scale_x * parent_transform_data.Scale.x, scale_y * parent_transform_data.Scale.y);
 
 		if (animation_controller != nullptr) {
 			auto animation = animation_controller->GetCurrentAnimation();
 			if (animation != nullptr) {
-				accTransform.Rotation += animation->GetCurrentTransform().TransformData.Rotation;
-				accTransform.Position += animation->GetCurrentTransform().TransformData.Position;
-				accTransform.Scale.x *= animation->GetCurrentTransform().TransformData.Scale.x;
-				accTransform.Scale.y *= animation->GetCurrentTransform().TransformData.Scale.y;
+				acc_transform.Rotation += animation->GetCurrentTransform().TransformData.Rotation;
+				acc_transform.Position += animation->GetCurrentTransform().TransformData.Position;
+				acc_transform.Scale.x *= animation->GetCurrentTransform().TransformData.Scale.x;
+				acc_transform.Scale.y *= animation->GetCurrentTransform().TransformData.Scale.y;
 			}
 		}
 
-        transform.translate(accTransform.Position.x, accTransform.Position.y);
-        transform.rotate(accTransform.Rotation, pivot_x, pivot_y);
-        transform.scale(accTransform.Scale.x, accTransform.Scale.y, pivot_x, pivot_y);
-
+        transform.translate(acc_transform.Position.x, acc_transform.Position.y);
+        transform.rotate(acc_transform.Rotation, pivot_x, pivot_y);
+        transform.scale(acc_transform.Scale.x, acc_transform.Scale.y, pivot_x, pivot_y);
 
         sf::RenderStates renderStates(transform);
 
@@ -43,7 +41,7 @@ namespace gameengine {
 
 		vector<shared_ptr<GameObject>>::iterator gameObjectIter;
         for (gameObjectIter = childs.begin(); gameObjectIter != childs.end(); gameObjectIter++)
-            (*gameObjectIter)->Draw(accTransform);
+            (*gameObjectIter)->Draw(acc_transform);
 
 
     }
@@ -56,10 +54,10 @@ namespace gameengine {
 		if (animation_controller != nullptr)
 			animation_controller->Update();
 
-		auto isMouseOnObject = IsMouseOn();
-		HandleMouseOnEvent(isMouseOnObject);
-		HandleOnClickEvent(isMouseOnObject);
-		HandleMouseOutEvent(isMouseOnObject);
+		auto is_mouse_on_object = IsMouseOn();
+		HandleMouseOnEvent(is_mouse_on_object);
+		HandleOnClickEvent(is_mouse_on_object);
+		HandleMouseOutEvent(is_mouse_on_object);
     }
 
     void GameObject::AddChild(shared_ptr<GameObject> child) {
@@ -77,15 +75,15 @@ namespace gameengine {
         y+=delta.y;
     }
 
-    void GameObject::SwapDepth(GameObject *gameObject) {
-        int tempDepth = gameObject->Depth();
-        gameObject->Depth(depth);
-        depth=tempDepth;
+    void GameObject::SwapDepth(GameObject *game_object) {
+        int temp_depth = game_object->Depth();
+        game_object->Depth(depth);
+        depth=temp_depth;
     }
 
-    void GameObject::SetPosition(sf::Vector2f newPosition) {
-        x = newPosition.x;
-        y = newPosition.y;
+    void GameObject::SetPosition(sf::Vector2f new_position) {
+        x = new_position.x;
+        y = new_position.y;
     }
 
     void GameObject::Rotate(float value) {
@@ -115,31 +113,27 @@ namespace gameengine {
         return false;
     }
 
-    void GameObject::HandleMouseOnEvent(bool isMouseOnObject) {
-        if(!is_mouse_on && isMouseOnObject) {
+    void GameObject::HandleMouseOnEvent(bool is_mouse_on_object) {
+        if(!is_mouse_on && is_mouse_on_object) {
 			is_mouse_on = true;
 			OnMouseOn();
         }
     }
 
-	void GameObject::HandleOnClickEvent(bool isMouseOnObject) {
+	void GameObject::HandleOnClickEvent(bool is_mouse_on_object) {
 		if (is_mouse_on) {
 			
 		}
 	}
 
-	void GameObject::HandleMouseOutEvent(bool isMouseOnObject) {
-		if (is_mouse_on && !isMouseOnObject) {
+	void GameObject::HandleMouseOutEvent(bool is_mouse_on_object) {
+		if (is_mouse_on && !is_mouse_on_object) {
 			is_mouse_on = false;
 			OnMouseOff();
 		}
 	}
 
-
-	void GameObject::OnPressed()
-		{	}
-	void GameObject::OnMouseOn()
-		{	}
-	void GameObject::OnMouseOff()
-		{	}
+	void GameObject::OnPressed() {}
+	void GameObject::OnMouseOn() {}
+	void GameObject::OnMouseOff() {}
 }
