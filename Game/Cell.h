@@ -24,7 +24,7 @@ public:
     Cell(sf::RenderWindow& app): GameObject(app), value(512)
         { }
     void Update();
-    void Init(ResourceManager* resourceManager);
+    void Init(ResourceManager* resource_manager);
 };
 
 

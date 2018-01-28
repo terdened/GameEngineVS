@@ -13,7 +13,7 @@ void Logo::Update() {
     GameObject::Update();
 }
 
-void Logo::Init(ResourceManager* resourceManager) {
-	SpriteGameObject::Init(resourceManager);
+void Logo::Init(ResourceManager* resource_manager) {
+	SpriteGameObject::Init(resource_manager);
 	animation_controller = new LogoAnimationController();
 }

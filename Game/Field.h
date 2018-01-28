@@ -14,7 +14,7 @@ public:
     Field(sf::RenderWindow& app): GameObject(app)
             { }
     void Update();
-    void Init(ResourceManager* resourceManager);
+    void Init(ResourceManager* resource_manager);
 };
 
 

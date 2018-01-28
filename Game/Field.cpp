@@ -15,8 +15,8 @@ void Field::Update() {
     //Rotate(1);
 }
 
-void Field::Init(ResourceManager* resourceManager) {
-    this->resource_manager = resourceManager;
+void Field::Init(ResourceManager* resource_manager) {
+    this->resource_manager = resource_manager;
     auto tile = std::make_shared<RectangleShape>();
     Vector2f size(500, 500);
     tile->setSize(size);

@@ -12,10 +12,10 @@ using namespace gameengine;
 
 class Logo : public SpriteGameObject{
 public:
-	Logo(sf::RenderWindow& app, string resourceName) : SpriteGameObject(app, resourceName)
+	Logo(sf::RenderWindow& app, string resource_name) : SpriteGameObject(app, resource_name)
 		{	}
     void Update();
-	void Init(ResourceManager* resourceManager);
+	void Init(ResourceManager* resource_manager);
 };
 
 

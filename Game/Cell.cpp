@@ -23,8 +23,8 @@ void Cell::Update() {
     GameObject::Update();        
 }
 
-void Cell::Init(ResourceManager* resourceManager) {
-    this->resource_manager = resourceManager;
+void Cell::Init(ResourceManager* resource_manager) {
+    this->resource_manager = resource_manager;
 	animation_controller = new TileAnimationController();
 
     tile = std::make_shared<RectangleShape>();
@@ -40,18 +40,18 @@ void Cell::Init(ResourceManager* resourceManager) {
 
     text->setFont(*font);
 
-    String stringValue = to_string(value);
-    text->setString(stringValue);
+    String string_value = to_string(value);
+    text->setString(string_value);
     text->setCharacterSize(32);
 
-    int textLength = 18 * stringValue.getSize();
-    int textLeftOffset = (100 - textLength)/2;
-    int textTopOffset = (100 - 46)/2;
+    int text_length = 18 * string_value.getSize();
+    int text_left_offset = (100 - text_length)/2;
+    int text_top_offset = (100 - 46)/2;
 
     auto silhouette = std::make_shared<RectangularSilhouette>(this, 100, 100);
     AddSilhouette(silhouette);
 
-    text->setPosition(textLeftOffset, textTopOffset);
+    text->setPosition(text_left_offset, text_top_offset);
 
     AddShape(text);
 }
