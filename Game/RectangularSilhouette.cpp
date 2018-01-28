@@ -8,11 +8,13 @@
 #include "GameObject.h"
 
 namespace gameengine {
-    bool RectangularSilhouette::IsMouseOn(sf::RenderWindow& renderWindow) {
-        float mouseX = sf::Mouse::getPosition(renderWindow).x;
-        float mouseY = sf::Mouse::getPosition(renderWindow).y;
+    bool RectangularSilhouette::IsMouseOn(sf::RenderWindow& render_window) {
+        float mouse_x = sf::Mouse::getPosition(render_window).x;
+        float mouse_y = sf::Mouse::getPosition(render_window).y;
 
-        return mouseX >= gameObject->GlobalX() && mouseX <= gameObject->GlobalX() + width
-               && mouseY >= gameObject->GlobalY() && mouseY <= gameObject->GlobalY() + height;
+        return mouse_x >= game_object->GlobalX() 
+			   && mouse_x <= game_object->GlobalX() + width
+               && mouse_y >= game_object->GlobalY() 
+			   && mouse_y <= game_object->GlobalY() + height;
     }
 }

@@ -16,7 +16,7 @@ public:
             { }
 
     ~MainScene() {
-        resourceManager->EmptyList();
+        resource_manager->EmptyList();
     }
 
     void Update();

@@ -6,28 +6,28 @@
 
 namespace gameengine {
 	enum AnimationState {
-		Played,
-		Paused,
-		Stoped,
-		Ended
+		kPlayed,
+		kPaused,
+		kStoped,
+		kEnded
 	};
 
 	class Animation {
 	private:
-		KeyFrame CurrentTransform;
-		KeyFrame GetActiveKeyFrame(int currentFrame);
-		KeyFrame GetNextKeyFrame(int currentFrame);
+		KeyFrame current_transform;
+		KeyFrame GetActiveKeyFrame(int current_frame);
+		KeyFrame get_next_key_frame(int current_frame);
 	protected:
-		int Duration;
-		int CurrentFrame;
-		std::vector<KeyFrame> KeyFrames;
-		bool IsRepeat;
+		int duration;
+		int current_frame;
+		std::vector<KeyFrame> key_frames;
+		bool repeat;
 		AnimationState state;
 	public:
 		Animation() {
-			IsRepeat = true;
-			Duration = 0;
-			CurrentFrame = 0;
+			repeat = true;
+			duration = 0;
+			current_frame = 0;
 		}
 
 		void Update();
@@ -36,7 +36,7 @@ namespace gameengine {
 		void Pause();
 
 		KeyFrame GetCurrentTransform() {
-			return CurrentTransform;
+			return current_transform;
 		}
 
 		AnimationState State() {

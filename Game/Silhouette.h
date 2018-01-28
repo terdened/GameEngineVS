@@ -12,15 +12,13 @@ namespace gameengine {
     class GameObject;
     class Silhouette {
     protected:
-        GameObject* gameObject = nullptr;
+        GameObject* game_object = nullptr;
     public:
-        Silhouette(GameObject* gameObject): gameObject(gameObject)
+        Silhouette(GameObject* game_object): game_object(game_object)
         {}
 
-        virtual bool IsMouseOn(sf::RenderWindow& renderWindow) = 0;
+        virtual bool IsMouseOn(sf::RenderWindow& render_window) = 0;
     };
-
-
 }
 
 

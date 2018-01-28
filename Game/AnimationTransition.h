@@ -7,27 +7,28 @@ using namespace std;
 
 namespace gameengine {
 	enum AnimaitonTransitionType {
-		WaitUntilAnimationEnd,
-		Immediately
+		kWaitUntilAnimationEnd,
+		kImmediately
 	};
 
 	class AnimationTransition 
 	{
 	public:
-		AnimationTransition (AnimaitonTransitionType type, shared_ptr<Animation> nextAnimaiton): Type(type), NextAnimaiton(nextAnimaiton)
-			{	}
+		AnimationTransition (AnimaitonTransitionType type, shared_ptr<Animation> next_animaiton)
+			:  type(type), 
+			   next_animaiton(next_animaiton) {}
 
 		shared_ptr<Animation> GetNextAnimation() {
-			return NextAnimaiton;
+			return next_animaiton;
 		}
 
 		bool(*Condition)(map<string, string> params);
 
 		bool IsActive(map<string, string> params, bool IsAnimationEnded) {
-			return ((IsAnimationEnded && Type == WaitUntilAnimationEnd) || Type == Immediately) && (Condition(params));
+			return ((IsAnimationEnded && type == kWaitUntilAnimationEnd) || type == kImmediately) && (Condition(params));
 		}
 	private:
-		AnimaitonTransitionType Type;
-		shared_ptr<Animation> NextAnimaiton;
+		AnimaitonTransitionType type;
+		shared_ptr<Animation> next_animaiton;
 	};
 }

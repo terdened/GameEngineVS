@@ -17,13 +17,12 @@ using namespace std;
 namespace gameengine {
     class ResourceManager {
     private:
-        void (*createResource)(Resource **, const unsigned int, const string &, const string &);
-
+        void (*create_resource)(Resource **, const unsigned int, const string &, const string &);
         stack<unsigned int> handles;
         map<string, shared_ptr<Resource>> resources;
     public:
-        ResourceManager(void (*createResource)(Resource **, const unsigned int, const string &, const string &))
-                : createResource(createResource) {}
+        ResourceManager(void (*create_resource)(Resource **, const unsigned int, const string &, const string &))
+                : create_resource(create_resource) {}
 
         template<class TResource>
         unsigned int Add(const string &filename, const string &name, const string &path = "./") {
@@ -31,8 +30,8 @@ namespace gameengine {
             if (handles.size() > 0)
                 handle = handles.top() + 1;
 
-            shared_ptr<TResource> newResource(new TResource(handle, filename, path, name));
-            resources[name] = newResource;
+            shared_ptr<TResource> new_resource(new TResource(handle, filename, path, name));
+            resources[name] = new_resource;
             handles.push(handle);
 
 			return handle;

@@ -10,23 +10,23 @@ namespace gameengine {
         sf::Transform transform;
 
 		TransformData acc_transform;
-		acc_transform.Rotation = rotation + parent_transform_data.Rotation;
-		acc_transform.Position = sf::Vector2f(x + parent_transform_data.Position.x, y + parent_transform_data.Position.y);
-		acc_transform.Scale = sf::Vector2f(scale_x * parent_transform_data.Scale.x, scale_y * parent_transform_data.Scale.y);
+		acc_transform.rotation = rotation + parent_transform_data.rotation;
+		acc_transform.position = sf::Vector2f(x + parent_transform_data.position.x, y + parent_transform_data.position.y);
+		acc_transform.scale = sf::Vector2f(scale_x * parent_transform_data.scale.x, scale_y * parent_transform_data.scale.y);
 
 		if (animation_controller != nullptr) {
 			auto animation = animation_controller->GetCurrentAnimation();
 			if (animation != nullptr) {
-				acc_transform.Rotation += animation->GetCurrentTransform().TransformData.Rotation;
-				acc_transform.Position += animation->GetCurrentTransform().TransformData.Position;
-				acc_transform.Scale.x *= animation->GetCurrentTransform().TransformData.Scale.x;
-				acc_transform.Scale.y *= animation->GetCurrentTransform().TransformData.Scale.y;
+				acc_transform.rotation += animation->GetCurrentTransform().transform_data.rotation;
+				acc_transform.position += animation->GetCurrentTransform().transform_data.position;
+				acc_transform.scale.x *= animation->GetCurrentTransform().transform_data.scale.x;
+				acc_transform.scale.y *= animation->GetCurrentTransform().transform_data.scale.y;
 			}
 		}
 
-        transform.translate(acc_transform.Position.x, acc_transform.Position.y);
-        transform.rotate(acc_transform.Rotation, pivot_x, pivot_y);
-        transform.scale(acc_transform.Scale.x, acc_transform.Scale.y, pivot_x, pivot_y);
+        transform.translate(acc_transform.position.x, acc_transform.position.y);
+        transform.rotate(acc_transform.rotation, pivot_x, pivot_y);
+        transform.scale(acc_transform.scale.x, acc_transform.scale.y, pivot_x, pivot_y);
 
         sf::RenderStates renderStates(transform);
 
@@ -113,21 +113,21 @@ namespace gameengine {
         return false;
     }
 
-    void GameObject::HandleMouseOnEvent(bool is_mouse_on_object) {
-        if(!is_mouse_on && is_mouse_on_object) {
+    void GameObject::HandleMouseOnEvent(bool mouse_on_object) {
+        if(!is_mouse_on && mouse_on_object) {
 			is_mouse_on = true;
 			OnMouseOn();
         }
     }
 
-	void GameObject::HandleOnClickEvent(bool is_mouse_on_object) {
+	void GameObject::HandleOnClickEvent(bool mouse_on_object) {
 		if (is_mouse_on) {
 			
 		}
 	}
 
-	void GameObject::HandleMouseOutEvent(bool is_mouse_on_object) {
-		if (is_mouse_on && !is_mouse_on_object) {
+	void GameObject::HandleMouseOutEvent(bool mouse_on_object) {
+		if (is_mouse_on && !mouse_on_object) {
 			is_mouse_on = false;
 			OnMouseOff();
 		}

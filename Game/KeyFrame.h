@@ -7,13 +7,13 @@
 
 namespace gameengine {
 	enum KeyFrameType {
-		Static, 
-		TransformAnimation
+		kStatic, 
+		kTransformAnimation
 	};
 
 	struct KeyFrame {
-		int FrameNumber;
-		TransformData TransformData;
-		KeyFrameType Type;
+		int frame_number;
+		TransformData transform_data;
+		KeyFrameType type;
 	};
 }

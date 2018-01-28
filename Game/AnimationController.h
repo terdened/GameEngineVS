@@ -16,14 +16,14 @@ namespace gameengine {
 		void Update();
 
 		shared_ptr<Animation> GetCurrentAnimation() {
-			return CurrentAnimation;
+			return current_animation;
 		}
-		map<string, string> Params;
+		map<string, string> params;
 		void SetParamValue(string key, string value);
 
 	protected:
-		shared_ptr<Animation> CurrentAnimation;
-		multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>> AnimationMap;
+		shared_ptr<Animation> current_animation;
+		multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>> animation_map;
 	private:
 		shared_ptr<Animation> GetNextAnimation();
 	};

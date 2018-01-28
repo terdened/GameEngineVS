@@ -7,16 +7,16 @@ using  namespace gameengine;
 class TileIdleAnimation : public Animation {
 public:
 	TileIdleAnimation() : Animation() {
-		IsRepeat = false;
-		Duration = 1;
-		CurrentFrame = 0;
+		repeat = false;
+		duration = 1;
+		current_frame = 0;
 
-		auto KeyFrame1 = KeyFrame();
-		KeyFrame1.FrameNumber = 0;
-		KeyFrame1.TransformData.Position = sf::Vector2f(0, 0);
-		KeyFrame1.TransformData.Rotation = 0;
-		KeyFrame1.TransformData.Scale = sf::Vector2f(1, 1);
-		KeyFrame1.Type = KeyFrameType::TransformAnimation;
-		KeyFrames.push_back(KeyFrame1);
+		auto key_frame_1 = KeyFrame();
+		key_frame_1.frame_number = 0;
+		key_frame_1.transform_data.position = sf::Vector2f(0, 0);
+		key_frame_1.transform_data.rotation = 0;
+		key_frame_1.transform_data.scale = sf::Vector2f(1, 1);
+		key_frame_1.type = KeyFrameType::kTransformAnimation;
+		key_frames.push_back(key_frame_1);
 	}
 };

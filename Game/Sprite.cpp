@@ -7,10 +7,10 @@
 #include "TextureResource.h"
 
 namespace gameengine {
-    void SpriteGameObject::Init(ResourceManager* resourceManager) {
-        this->resource_manager = resourceManager;
+    void SpriteGameObject::Init(ResourceManager* resource_manager) {
+        this->resource_manager = resource_manager;
         sprite = std::make_shared<sf::Sprite>();
-        auto texture = this->resource_manager->GetElement<TextureResource>(resourceName)->Texture();
+        auto texture = this->resource_manager->GetElement<TextureResource>(resource_name)->Texture();
         sprite->setTexture(*texture);
         AddShape(sprite);
 

@@ -10,13 +10,13 @@
 namespace gameengine {
     class ResourceLoader {
     protected:
-        ResourceManager* resourceManager;
+        ResourceManager* resource_manager;
     public:
-        ResourceLoader(ResourceManager* resourceManager): resourceManager(resourceManager)
+        ResourceLoader(ResourceManager* resource_manager): resource_manager(resource_manager)
             { }
 
         ~ResourceLoader() {
-            delete resourceManager;
+            delete resource_manager;
         }
         virtual void Load() = 0;
     };

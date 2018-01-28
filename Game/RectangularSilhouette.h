@@ -14,10 +14,10 @@ namespace gameengine{
         float width;
         float height;
     public:
-        RectangularSilhouette(GameObject* gameObject, float width, float height): Silhouette(gameObject), width(width), height(height)
+        RectangularSilhouette(GameObject* game_object, float width, float height): Silhouette(game_object), width(width), height(height)
         {}
 
-        bool IsMouseOn(sf::RenderWindow& renderWindow) override;
+        bool IsMouseOn(sf::RenderWindow& render_window) override;
     };
 }
 

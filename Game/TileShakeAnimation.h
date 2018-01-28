@@ -5,41 +5,41 @@ namespace gameengine {
 	class TileShakeAnimation : public Animation {
 	public:
 		TileShakeAnimation() : Animation() {
-			IsRepeat = true;
-			Duration = 9;
-			CurrentFrame = 0;
+			repeat = true;
+			duration = 9;
+			current_frame = 0;
 
-			auto KeyFrame1 = KeyFrame();
-			KeyFrame1.FrameNumber = 0;
-			KeyFrame1.TransformData.Position = sf::Vector2f(0, 0);
-			KeyFrame1.TransformData.Rotation = 0;
-			KeyFrame1.TransformData.Scale = sf::Vector2f(1.15, 1.15);
-			KeyFrame1.Type = KeyFrameType::TransformAnimation;
-			KeyFrames.push_back(KeyFrame1);
+			auto key_frame_1 = KeyFrame();
+			key_frame_1.frame_number = 0;
+			key_frame_1.transform_data.position = sf::Vector2f(0, 0);
+			key_frame_1.transform_data.rotation = 0;
+			key_frame_1.transform_data.scale = sf::Vector2f(1.15, 1.15);
+			key_frame_1.type = KeyFrameType::kTransformAnimation;
+			key_frames.push_back(key_frame_1);
 
-			auto KeyFrame2 = KeyFrame();
-			KeyFrame2.FrameNumber = 2;
-			KeyFrame2.TransformData.Position = sf::Vector2f(0, 0);
-			KeyFrame2.TransformData.Rotation = -3;
-			KeyFrame2.TransformData.Scale = sf::Vector2f(1.15, 1.15);
-			KeyFrame2.Type = KeyFrameType::TransformAnimation;
-			KeyFrames.push_back(KeyFrame2);
+			auto key_frame_2 = KeyFrame();
+			key_frame_2.frame_number = 2;
+			key_frame_2.transform_data.position = sf::Vector2f(0, 0);
+			key_frame_2.transform_data.rotation = -3;
+			key_frame_2.transform_data.scale = sf::Vector2f(1.15, 1.15);
+			key_frame_2.type = KeyFrameType::kTransformAnimation;
+			key_frames.push_back(key_frame_2);
 
-			auto KeyFrame3 = KeyFrame();
-			KeyFrame3.FrameNumber = 6;
-			KeyFrame3.TransformData.Position = sf::Vector2f(0, 0);
-			KeyFrame3.TransformData.Rotation = 3;
-			KeyFrame3.TransformData.Scale = sf::Vector2f(1.15, 1.15);
-			KeyFrame3.Type = KeyFrameType::TransformAnimation;
-			KeyFrames.push_back(KeyFrame3);
+			auto key_frame_3 = KeyFrame();
+			key_frame_3.frame_number = 6;
+			key_frame_3.transform_data.position = sf::Vector2f(0, 0);
+			key_frame_3.transform_data.rotation = 3;
+			key_frame_3.transform_data.scale = sf::Vector2f(1.15, 1.15);
+			key_frame_3.type = KeyFrameType::kTransformAnimation;
+			key_frames.push_back(key_frame_3);
 
-			auto KeyFrame4 = KeyFrame();
-			KeyFrame4.FrameNumber = 8;
-			KeyFrame4.TransformData.Position = sf::Vector2f(0, 0);
-			KeyFrame4.TransformData.Rotation = 0;
-			KeyFrame4.TransformData.Scale = sf::Vector2f(1.15, 1.15);
-			KeyFrame4.Type = KeyFrameType::TransformAnimation;
-			KeyFrames.push_back(KeyFrame4);
+			auto key_frame_4 = KeyFrame();
+			key_frame_4.frame_number = 8;
+			key_frame_4.transform_data.position = sf::Vector2f(0, 0);
+			key_frame_4.transform_data.rotation = 0;
+			key_frame_4.transform_data.scale = sf::Vector2f(1.15, 1.15);
+			key_frame_4.type = KeyFrameType::kTransformAnimation;
+			key_frames.push_back(key_frame_4);
 		}
 	};
 }

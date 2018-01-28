@@ -29,9 +29,9 @@ namespace gameengine {
         float pivot_x;
         float pivot_y;
         bool is_mouse_on;
-        void HandleMouseOnEvent(bool is_mouse_on_object);
-        void HandleOnClickEvent(bool is_mouse_on_object);
-        void HandleMouseOutEvent(bool is_mouse_on_object);
+        void HandleMouseOnEvent(bool mouse_on_object);
+        void HandleOnClickEvent(bool mouse_on_object);
+        void HandleMouseOutEvent(bool mouse_on_object);
     protected:
         GameObject* parent = nullptr;
         float x;

@@ -10,13 +10,13 @@
 namespace gameengine {
     class SpriteGameObject : public GameObject {
     private:
-        string resourceName;
+        string resource_name;
         shared_ptr<sf::Sprite> sprite;
     public:
-        SpriteGameObject(sf::RenderWindow& app, string resourceName) : GameObject(app), resourceName(resourceName)
+        SpriteGameObject(sf::RenderWindow& app, string resource_name) : GameObject(app), resource_name(resource_name)
             {   }
 
-        void Init(ResourceManager* resourceManager);
+        void Init(ResourceManager* resource_manager);
     };
 }
 

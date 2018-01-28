@@ -17,11 +17,11 @@ namespace gameengine {
     private:
 		vector<shared_ptr<GameObject>> childs;
     protected:
-        ResourceManager* resourceManager;
-        sf::RenderWindow& renderWindow;
-        ResourceLoader* resourceLoader;
+        ResourceManager* resource_manager;
+        sf::RenderWindow& render_window;
+        ResourceLoader* resource_loader;
     public:
-        Scene(sf::RenderWindow& app): renderWindow(app)
+        Scene(sf::RenderWindow& app): render_window(app)
                 { }
         void Draw();
         virtual void Update();

@@ -18,15 +18,15 @@ void MainScene::Update() {
 }
 
 void MainScene::Init() {
-    resourceManager = new ResourceManager(nullptr);
-    resourceLoader = new MainSceneResourceLoader(resourceManager);
-    resourceLoader->Load();
+    resource_manager = new ResourceManager(nullptr);
+    resource_loader = new MainSceneResourceLoader(resource_manager);
+    resource_loader->Load();
 
-    auto field = std::make_shared<Field>(renderWindow);
+    auto field = std::make_shared<Field>(render_window);
     field->SetPosition(sf::Vector2f(350, 150));
     AddChild(field);
 
-    auto logo = std::make_shared<Logo>(renderWindow, "logo");
+    auto logo = std::make_shared<Logo>(render_window, "logo");
     AddChild(logo);
     logo->SetScale(sf::Vector2f(0.5f, 0.5f));
 	//logo->PlayAnimation(new WalkAroundFieldAnimation());

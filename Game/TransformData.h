@@ -5,11 +5,12 @@
 
 namespace gameengine {
 	struct TransformData {
-		sf::Vector2f Position;
-		sf::Vector2f Scale;
-		float Rotation;
+		sf::Vector2f position;
+		sf::Vector2f scale;
+		float rotation;
 
-		TransformData() : Position(sf::Vector2f(0, 0)), Scale(sf::Vector2f(1, 1)), Rotation(0)
-			{	}
+		TransformData() : position(sf::Vector2f(0, 0)), 
+						  scale(sf::Vector2f(1, 1)),
+					      rotation(0) {}
 	};
 }
