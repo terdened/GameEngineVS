@@ -3,11 +3,9 @@
 //
 
 #include "stdafx.h"
-#include "Cell.h"
+#include "cell.h"
 #include "RectangularSilhouette.h"
-#include "MouseOnTileAnimation.h"
-#include "MouseOutTileAnimation.h"
-#include "TileAnimationController.h"
+#include "tile-animation-controller.h"
 #include <sstream>
 
 using namespace sf;
@@ -103,5 +101,4 @@ Color Cell::GetColor(int value){
         default:
             return Color(60, 58, 50);
     }
-
 }

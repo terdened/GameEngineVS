@@ -3,7 +3,7 @@
 //
 
 #include "stdafx.h"
-#include "MainSceneResourceLoader.h"
+#include "main-scene-resource-loader.h"
 #include "TextureResource.h"
 
 void MainSceneResourceLoader::Load() {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "AnimationController.h"
-#include "WalkAroundFieldAnimation.h"
+#include "walk-around-field-animation.h"
 
 namespace gameengine {
 	class LogoAnimationController : public AnimationController {

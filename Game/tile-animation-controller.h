@@ -1,9 +1,9 @@
 #pragma once
 #include "AnimationController.h"
-#include "MouseOnTileAnimation.h"
-#include "TileShakeAnimation.h"
-#include "MouseOutTileAnimation.h"
-#include "TileIdleAnimation.h"
+#include "mouse-on-tile-animation.h"
+#include "mouse-out-tile-animation.h"
+#include "tile-shake-animation.h"
+#include "tile-idle-animation.h"
 
 using namespace std;
 

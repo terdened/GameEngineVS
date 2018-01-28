@@ -3,8 +3,8 @@
 //
 
 #include "stdafx.h"
-#include "Field.h"
-#include "Cell.h"
+#include "field.h"
+#include "cell.h"
 #include "ResourceManager.h"
 
 

@@ -13,32 +13,32 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\GameObjects">
-      <UniqueIdentifier>{298c89b2-9ff6-4896-b54c-997ae9a242f7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Core">
-      <UniqueIdentifier>{8827ab1e-267b-4b94-95f2-91632543a955}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ResourceLoaders">
-      <UniqueIdentifier>{2f10cca7-340b-4185-9632-053cf833b4d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Scenes">
+    <Filter Include="Source Files\scenes">
       <UniqueIdentifier>{5ac141b4-824a-471a-9c16-e0d702517204}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Core\ResourceManager">
-      <UniqueIdentifier>{a30802e9-8fae-4b6b-ac29-7993e774608b}</UniqueIdentifier>
+    <Filter Include="Source Files\resource-loaders">
+      <UniqueIdentifier>{2f10cca7-340b-4185-9632-053cf833b4d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Core\Silhouette">
-      <UniqueIdentifier>{fffe7a5d-b029-468b-8370-a90752ce068c}</UniqueIdentifier>
+    <Filter Include="Source Files\game-objects">
+      <UniqueIdentifier>{298c89b2-9ff6-4896-b54c-997ae9a242f7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Core\Structure">
-      <UniqueIdentifier>{e7a94175-1c7e-4a90-ab14-5a27732876fd}</UniqueIdentifier>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{8827ab1e-267b-4b94-95f2-91632543a955}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Core\Animation">
+    <Filter Include="Source Files\animations">
+      <UniqueIdentifier>{522f2c52-a4de-4cb3-b2fb-b90b3b183bcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\animation">
       <UniqueIdentifier>{f6049a04-991b-4d1a-a14f-bd9920d91c58}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Animations">
-      <UniqueIdentifier>{522f2c52-a4de-4cb3-b2fb-b90b3b183bcf}</UniqueIdentifier>
+    <Filter Include="Source Files\core\resource-manager">
+      <UniqueIdentifier>{a30802e9-8fae-4b6b-ac29-7993e774608b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\silhouette">
+      <UniqueIdentifier>{fffe7a5d-b029-468b-8370-a90752ce068c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\structure">
+      <UniqueIdentifier>{e7a94175-1c7e-4a90-ab14-5a27732876fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,145 +51,145 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainSceneResourceLoader.h">
-      <Filter>Source Files\ResourceLoaders</Filter>
-    </ClInclude>
-    <ClInclude Include="MainScene.h">
-      <Filter>Source Files\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="Cell.h">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Field.h">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Logo.h">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="FontResource.h">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClInclude>
     <ClInclude Include="ResourceLoader.h">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClInclude>
     <ClInclude Include="TextureResource.h">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClInclude>
     <ClInclude Include="RectangularSilhouette.h">
-      <Filter>Source Files\Core\Silhouette</Filter>
+      <Filter>Source Files\core\silhouette</Filter>
     </ClInclude>
     <ClInclude Include="Silhouette.h">
-      <Filter>Source Files\Core\Silhouette</Filter>
+      <Filter>Source Files\core\silhouette</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Source Files\Core\Structure</Filter>
+      <Filter>Source Files\core\structure</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>Source Files\Core\Structure</Filter>
+      <Filter>Source Files\core\structure</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>Source Files\Core\Structure</Filter>
+      <Filter>Source Files\core\structure</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>Source Files\Core\Animation</Filter>
+      <Filter>Source Files\core\animation</Filter>
     </ClInclude>
     <ClInclude Include="KeyFrame.h">
-      <Filter>Source Files\Core\Animation</Filter>
+      <Filter>Source Files\core\animation</Filter>
     </ClInclude>
     <ClInclude Include="TransformData.h">
-      <Filter>Source Files\Core\Structure</Filter>
-    </ClInclude>
-    <ClInclude Include="WalkAroundFieldAnimation.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="MouseOnTileAnimation.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="MouseOutTileAnimation.h">
-      <Filter>Source Files\Animations</Filter>
+      <Filter>Source Files\core\structure</Filter>
     </ClInclude>
     <ClInclude Include="AnimationTransition.h">
-      <Filter>Source Files\Core\Animation</Filter>
+      <Filter>Source Files\core\animation</Filter>
     </ClInclude>
     <ClInclude Include="AnimationController.h">
-      <Filter>Source Files\Core\Animation</Filter>
+      <Filter>Source Files\core\animation</Filter>
     </ClInclude>
-    <ClInclude Include="TileAnimationController.h">
-      <Filter>Source Files\Animations</Filter>
+    <ClInclude Include="main-scene.h">
+      <Filter>Source Files\scenes</Filter>
     </ClInclude>
-    <ClInclude Include="TileIdleAnimation.h">
-      <Filter>Source Files\Animations</Filter>
+    <ClInclude Include="main-scene-resource-loader.h">
+      <Filter>Source Files\resource-loaders</Filter>
     </ClInclude>
-    <ClInclude Include="TileShakeAnimation.h">
-      <Filter>Source Files\Animations</Filter>
+    <ClInclude Include="logo.h">
+      <Filter>Source Files\game-objects</Filter>
     </ClInclude>
-    <ClInclude Include="LogoAnimationController.h">
-      <Filter>Source Files\Animations</Filter>
+    <ClInclude Include="field.h">
+      <Filter>Source Files\game-objects</Filter>
+    </ClInclude>
+    <ClInclude Include="cell.h">
+      <Filter>Source Files\game-objects</Filter>
+    </ClInclude>
+    <ClInclude Include="walk-around-field-animation.h">
+      <Filter>Source Files\animations</Filter>
+    </ClInclude>
+    <ClInclude Include="tile-shake-animation.h">
+      <Filter>Source Files\animations</Filter>
+    </ClInclude>
+    <ClInclude Include="tile-idle-animation.h">
+      <Filter>Source Files\animations</Filter>
+    </ClInclude>
+    <ClInclude Include="tile-animation-controller.h">
+      <Filter>Source Files\animations</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse-out-tile-animation.h">
+      <Filter>Source Files\animations</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse-on-tile-animation.h">
+      <Filter>Source Files\animations</Filter>
+    </ClInclude>
+    <ClInclude Include="logo-animation-controller.h">
+      <Filter>Source Files\animations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainSceneResourceLoader.cpp">
-      <Filter>Source Files\ResourceLoaders</Filter>
-    </ClCompile>
-    <ClCompile Include="MainScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="Cell.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Field.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Logo.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="FontResource.cpp">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClCompile>
     <ClCompile Include="Resource.cpp">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClCompile>
     <ClCompile Include="ResourceLoader.cpp">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClCompile>
     <ClCompile Include="TextureResource.cpp">
-      <Filter>Source Files\Core\ResourceManager</Filter>
+      <Filter>Source Files\core\resource-manager</Filter>
     </ClCompile>
     <ClCompile Include="RectangularSilhouette.cpp">
-      <Filter>Source Files\Core\Silhouette</Filter>
+      <Filter>Source Files\core\silhouette</Filter>
     </ClCompile>
     <ClCompile Include="Silhouette.cpp">
-      <Filter>Source Files\Core\Silhouette</Filter>
+      <Filter>Source Files\core\silhouette</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files\Core\Structure</Filter>
+      <Filter>Source Files\core\structure</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>Source Files\Core\Structure</Filter>
+      <Filter>Source Files\core\structure</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files\Core\Structure</Filter>
+      <Filter>Source Files\core\structure</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>Source Files\Core\Animation</Filter>
+      <Filter>Source Files\core\animation</Filter>
     </ClCompile>
     <ClCompile Include="AnimationController.cpp">
-      <Filter>Source Files\Core\Animation</Filter>
+      <Filter>Source Files\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="main-scene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="main-scene-resource-loader.cpp">
+      <Filter>Source Files\resource-loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="logo.cpp">
+      <Filter>Source Files\game-objects</Filter>
+    </ClCompile>
+    <ClCompile Include="field.cpp">
+      <Filter>Source Files\game-objects</Filter>
+    </ClCompile>
+    <ClCompile Include="cell.cpp">
+      <Filter>Source Files\game-objects</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

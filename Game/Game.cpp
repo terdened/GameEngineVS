@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "MainScene.h"
+#include "main-scene.h"
 
 using namespace sf;
 using namespace std;

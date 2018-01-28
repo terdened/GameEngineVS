@@ -3,12 +3,12 @@
 //
 
 #include "stdafx.h"
-#include "MainScene.h"
+#include "main-scene.h"
 
-#include "Field.h"
+#include "field.h"
 #include "ResourceManager.h"
-#include "Logo.h"
-#include "MainSceneResourceLoader.h"
+#include "logo.h"
+#include "main-scene-resource-loader.h"
 #include "WalkAroundFieldAnimation.h"
 
 using namespace sf;

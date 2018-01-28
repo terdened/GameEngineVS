@@ -3,7 +3,7 @@
 //
 
 #include "stdafx.h"
-#include "Logo.h"
+#include "logo.h"
 #include "TextureResource.h"
 #include "LogoAnimationController.h"
 
