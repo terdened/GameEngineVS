@@ -9,7 +9,7 @@
 #include "ResourceManager.h"
 #include "logo.h"
 #include "main-scene-resource-loader.h"
-#include "WalkAroundFieldAnimation.h"
+#include "walk-around-field-animation.h"
 
 using namespace sf;
 
