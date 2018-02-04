@@ -2,7 +2,7 @@
 #pragma once
 
 #include "stdafx.h"
-#include "Animation.h"
+#include "animation.h"
 
 using  namespace gameengine;
 

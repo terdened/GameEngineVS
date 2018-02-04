@@ -1,5 +1,5 @@
 #pragma once
-#include "Animation.h"
+#include "animation.h"
 
 namespace gameengine {
 	class TileShakeAnimation : public Animation {

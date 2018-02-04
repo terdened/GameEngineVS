@@ -9,7 +9,7 @@
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <iostream>
-#include "Resource.h"
+#include "resource.h"
 
 namespace gameengine {
     class TextureResource : public Resource {

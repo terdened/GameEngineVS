@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Animation.h"
+#include "animation.h"
 #include <algorithm>
 
 using namespace std;

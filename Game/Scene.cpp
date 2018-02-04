@@ -3,7 +3,8 @@
 //
 
 #include "stdafx.h"
-#include "Scene.h"
+#include "scene.h"
+
 namespace gameengine {
     void Scene::Draw() {
         vector<shared_ptr<GameObject>>::iterator game_objectIter;

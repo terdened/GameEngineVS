@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AnimationController.h"
+#include "animation-controller.h"
 #include "walk-around-field-animation.h"
 
 namespace gameengine {

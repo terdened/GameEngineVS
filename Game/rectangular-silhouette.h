@@ -6,7 +6,7 @@
 #define GAME_RECTANGULARSILHOUETTE_H
 
 
-#include "Silhouette.h"
+#include "silhouette.h"
 
 namespace gameengine{
     class RectangularSilhouette: public Silhouette {

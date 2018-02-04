@@ -145,61 +145,61 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animation.h" />
-    <ClInclude Include="AnimationController.h" />
-    <ClInclude Include="AnimationTransition.h" />
+    <ClInclude Include="animation.h" />
+    <ClInclude Include="animation-controller.h" />
+    <ClInclude Include="animation-transition.h" />
     <ClInclude Include="cell.h" />
     <ClInclude Include="field.h" />
-    <ClInclude Include="FontResource.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="KeyFrame.h" />
+    <ClInclude Include="font-resource.h" />
+    <ClInclude Include="game-object.h" />
+    <ClInclude Include="key-frame.h" />
     <ClInclude Include="logo.h" />
     <ClInclude Include="logo-animation-controller.h" />
     <ClInclude Include="main-scene.h" />
     <ClInclude Include="main-scene-resource-loader.h" />
     <ClInclude Include="mouse-on-tile-animation.h" />
     <ClInclude Include="mouse-out-tile-animation.h" />
-    <ClInclude Include="RectangularSilhouette.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="ResourceLoader.h" />
-    <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="Silhouette.h" />
-    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="rectangular-silhouette.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource-loader.h" />
+    <ClInclude Include="resource-manager.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="silhouette.h" />
+    <ClInclude Include="sprite.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TextureResource.h" />
+    <ClInclude Include="texture-resource.h" />
     <ClInclude Include="tile-animation-controller.h" />
     <ClInclude Include="tile-idle-animation.h" />
     <ClInclude Include="tile-shake-animation.h" />
-    <ClInclude Include="TransformData.h" />
+    <ClInclude Include="transform-data.h" />
     <ClInclude Include="walk-around-field-animation.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="AnimationController.cpp" />
+    <ClCompile Include="animation.cpp" />
+    <ClCompile Include="animation-controller.cpp" />
     <ClCompile Include="cell.cpp" />
     <ClCompile Include="field.cpp" />
-    <ClCompile Include="FontResource.cpp" />
+    <ClCompile Include="font-resource.cpp" />
     <ClCompile Include="game.cpp" />
-    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="game-object.cpp" />
     <ClCompile Include="logo.cpp" />
     <ClCompile Include="main-scene.cpp" />
     <ClCompile Include="main-scene-resource-loader.cpp" />
-    <ClCompile Include="RectangularSilhouette.cpp" />
-    <ClCompile Include="Resource.cpp" />
-    <ClCompile Include="ResourceLoader.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Silhouette.cpp" />
-    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="rectangular-silhouette.cpp" />
+    <ClCompile Include="resource.cpp" />
+    <ClCompile Include="resource-loader.cpp" />
+    <ClCompile Include="resource-manager.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="silhouette.cpp" />
+    <ClCompile Include="sprite.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TextureResource.cpp" />
+    <ClCompile Include="texture-resource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\arial.ttf" />

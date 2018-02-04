@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Animation.h"
-#include "AnimationTransition.h"
+#include "animation.h"
+#include "animation-transition.h"
 #include <map>
 #include <string>
 

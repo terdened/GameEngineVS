@@ -1,5 +1,5 @@
 #pragma once
-#include "AnimationController.h"
+#include "animation-controller.h"
 #include "mouse-on-tile-animation.h"
 #include "mouse-out-tile-animation.h"
 #include "tile-shake-animation.h"

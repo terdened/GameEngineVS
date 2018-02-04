@@ -6,10 +6,10 @@
 #include "main-scene.h"
 
 #include "field.h"
-#include "ResourceManager.h"
+#include "resource-manager.h"
 #include "logo.h"
 #include "main-scene-resource-loader.h"
-#include "WalkAroundFieldAnimation.h"
+#include "walk-around-field-animation.h"
 
 using namespace sf;
 

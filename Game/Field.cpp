@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "field.h"
 #include "cell.h"
-#include "ResourceManager.h"
+#include "resource-manager.h"
 
 
 using namespace sf;

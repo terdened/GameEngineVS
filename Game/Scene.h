@@ -6,9 +6,9 @@
 #define GAME_SCENE_H
 
 #include <SFML/Graphics.hpp>
-#include "GameObject.h"
-#include "ResourceLoader.h"
-#include "Silhouette.h"
+#include "game-object.h"
+#include "resource-loader.h"
+#include "silhouette.h"
 
 using namespace std;
 

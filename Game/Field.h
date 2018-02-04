@@ -5,7 +5,7 @@
 #ifndef GAME_FIELD_H
 #define GAME_FIELD_H
 
-#include "GameObject.h"
+#include "game-object.h"
 
 using namespace gameengine;
 

@@ -5,7 +5,7 @@
 #ifndef GAME_MAINSCENERESOURCELOADER_H
 #define GAME_MAINSCENERESOURCELOADER_H
 
-#include "ResourceLoader.h"
+#include "resource-loader.h"
 
 using namespace gameengine;
 

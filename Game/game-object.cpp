@@ -3,7 +3,7 @@
 //
 
 #include "stdafx.h"
-#include "GameObject.h"
+#include "game-object.h"
 
 namespace gameengine {
     void GameObject::Draw(TransformData parent_transform_data) {

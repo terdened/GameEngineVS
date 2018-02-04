@@ -3,4 +3,4 @@
 //
 
 #include "stdafx.h"
-#include "FontResource.h"
+#include "font-resource.h"

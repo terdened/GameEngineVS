@@ -8,10 +8,11 @@
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
 #include <list>
-#include "ResourceManager.h"
-#include "Silhouette.h"
-#include "Animation.h"
-#include "AnimationController.h"
+#include "resource-manager.h"
+#include "silhouette.h"
+#include "animation.h"
+#include "animation-controller.h"
+#include "transform-data.h"
 
 using namespace std;
 

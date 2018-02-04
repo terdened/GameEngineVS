@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "main-scene-resource-loader.h"
-#include "TextureResource.h"
+#include "texture-resource.h"
 
 void MainSceneResourceLoader::Load() {
     resource_manager->Add<FontResource>("arial.ttf", "font", "./Resources/");

@@ -3,4 +3,4 @@
 //
 
 #include "stdafx.h"
-#include "Silhouette.h"
+#include "silhouette.h"

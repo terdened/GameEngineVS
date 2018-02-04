@@ -3,7 +3,7 @@
 //
 
 #include "stdafx.h"
-#include "ResourceManager.h"
+#include "resource-manager.h"
 
 namespace gameengine {
     void ResourceManager::EmptyList() {

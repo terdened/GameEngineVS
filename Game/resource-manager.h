@@ -9,8 +9,8 @@
 #include <string>
 #include <algorithm>
 #include <memory>
-#include "Resource.h"
-#include "FontResource.h"
+#include "resource.h"
+#include "font-resource.h"
 
 using namespace std;
 

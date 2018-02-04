@@ -5,7 +5,7 @@
 #ifndef GAME_RESOURCELOADER_H
 #define GAME_RESOURCELOADER_H
 
-#include "ResourceManager.h"
+#include "resource-manager.h"
 
 namespace gameengine {
     class ResourceLoader {

@@ -51,51 +51,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FontResource.h">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceLoader.h">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureResource.h">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClInclude>
-    <ClInclude Include="RectangularSilhouette.h">
-      <Filter>Source Files\core\silhouette</Filter>
-    </ClInclude>
-    <ClInclude Include="Silhouette.h">
-      <Filter>Source Files\core\silhouette</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Source Files\core\structure</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Source Files\core\structure</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Source Files\core\structure</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Source Files\core\animation</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyFrame.h">
-      <Filter>Source Files\core\animation</Filter>
-    </ClInclude>
-    <ClInclude Include="TransformData.h">
-      <Filter>Source Files\core\structure</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimationTransition.h">
-      <Filter>Source Files\core\animation</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimationController.h">
-      <Filter>Source Files\core\animation</Filter>
-    </ClInclude>
     <ClInclude Include="main-scene.h">
       <Filter>Source Files\scenes</Filter>
     </ClInclude>
@@ -132,46 +87,55 @@
     <ClInclude Include="logo-animation-controller.h">
       <Filter>Source Files\animations</Filter>
     </ClInclude>
+    <ClInclude Include="transform-data.h">
+      <Filter>Source Files\core\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite.h">
+      <Filter>Source Files\core\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Source Files\core\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="game-object.h">
+      <Filter>Source Files\core\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="silhouette.h">
+      <Filter>Source Files\core\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="rectangular-silhouette.h">
+      <Filter>Source Files\core\silhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="texture-resource.h">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClInclude>
+    <ClInclude Include="resource-manager.h">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClInclude>
+    <ClInclude Include="resource-loader.h">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClInclude>
+    <ClInclude Include="font-resource.h">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClInclude>
+    <ClInclude Include="key-frame.h">
+      <Filter>Source Files\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation-transition.h">
+      <Filter>Source Files\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation-controller.h">
+      <Filter>Source Files\core\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>Source Files\core\animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FontResource.cpp">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Resource.cpp">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceLoader.cpp">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureResource.cpp">
-      <Filter>Source Files\core\resource-manager</Filter>
-    </ClCompile>
-    <ClCompile Include="RectangularSilhouette.cpp">
-      <Filter>Source Files\core\silhouette</Filter>
-    </ClCompile>
-    <ClCompile Include="Silhouette.cpp">
-      <Filter>Source Files\core\silhouette</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files\core\structure</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>Source Files\core\structure</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files\core\structure</Filter>
-    </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Source Files\core\animation</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimationController.cpp">
-      <Filter>Source Files\core\animation</Filter>
     </ClCompile>
     <ClCompile Include="main-scene.cpp">
       <Filter>Source Files\scenes</Filter>
@@ -190,6 +154,42 @@
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite.cpp">
+      <Filter>Source Files\core\structure</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files\core\structure</Filter>
+    </ClCompile>
+    <ClCompile Include="game-object.cpp">
+      <Filter>Source Files\core\structure</Filter>
+    </ClCompile>
+    <ClCompile Include="silhouette.cpp">
+      <Filter>Source Files\core\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="rectangular-silhouette.cpp">
+      <Filter>Source Files\core\silhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="texture-resource.cpp">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClCompile>
+    <ClCompile Include="resource-manager.cpp">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClCompile>
+    <ClCompile Include="resource-loader.cpp">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClCompile>
+    <ClCompile Include="resource.cpp">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClCompile>
+    <ClCompile Include="font-resource.cpp">
+      <Filter>Source Files\core\resource-manager</Filter>
+    </ClCompile>
+    <ClCompile Include="animation-controller.cpp">
+      <Filter>Source Files\core\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>Source Files\core\animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

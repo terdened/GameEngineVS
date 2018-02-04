@@ -5,7 +5,7 @@
 #ifndef GAME_SPRITE_H
 #define GAME_SPRITE_H
 
-#include "GameObject.h"
+#include "game-object.h"
 
 namespace gameengine {
     class SpriteGameObject : public GameObject {

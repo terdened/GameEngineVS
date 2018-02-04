@@ -9,7 +9,7 @@
 #include <SFML/Graphics/Font.hpp>
 #include <iostream>
 #include <memory>
-#include "Resource.h"
+#include "resource.h"
 
 namespace gameengine {
     class FontResource : public Resource {

@@ -4,8 +4,8 @@
 
 #include "stdafx.h"
 #include "logo.h"
-#include "TextureResource.h"
-#include "LogoAnimationController.h"
+#include "texture-resource.h"
+#include "logo-animation-controller.h"
 
 using namespace sf;
 

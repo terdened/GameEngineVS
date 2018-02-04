@@ -5,8 +5,8 @@
 #ifndef GAME_CELL_H
 #define GAME_CELL_H
 
-#include "GameObject.h"
-#include "ResourceManager.h"
+#include "game-object.h"
+#include "resource-manager.h"
 
 using namespace gameengine;
 

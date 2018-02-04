@@ -1,7 +1,7 @@
 #pragma once
 
 #include "stdafx.h"
-#include "KeyFrame.h"
+#include "key-frame.h"
 #include <vector>
 
 namespace gameengine {

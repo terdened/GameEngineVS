@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "cell.h"
-#include "RectangularSilhouette.h"
+#include "rectangular-silhouette.h"
 #include "tile-animation-controller.h"
 #include <sstream>
 

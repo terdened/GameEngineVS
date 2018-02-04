@@ -3,4 +3,4 @@
 //
 
 #include "stdafx.h"
-#include "ResourceLoader.h"
+#include "texture-resource.h"

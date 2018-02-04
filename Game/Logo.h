@@ -5,8 +5,8 @@
 #ifndef GAME_LOGO_H
 #define GAME_LOGO_H
 
-#include "ResourceManager.h"
-#include "Sprite.h"
+#include "resource-manager.h"
+#include "sprite.h"
 
 using namespace gameengine;
 

@@ -4,8 +4,8 @@
 
 #include "stdafx.h"
 #include <SFML/Window/Mouse.hpp>
-#include "RectangularSilhouette.h"
-#include "GameObject.h"
+#include "rectangular-silhouette.h"
+#include "game-object.h"
 
 namespace gameengine {
     bool RectangularSilhouette::IsMouseOn(sf::RenderWindow& render_window) {

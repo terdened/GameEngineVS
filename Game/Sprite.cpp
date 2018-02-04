@@ -3,8 +3,9 @@
 //
 
 #include "stdafx.h"
-#include "Sprite.h"
-#include "TextureResource.h"
+#include "sprite.h"
+#include "texture-resource.h"
+#include "resource-manager.h"
 
 namespace gameengine {
     void SpriteGameObject::Init(ResourceManager* resource_manager) {
