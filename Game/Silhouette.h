@@ -14,8 +14,8 @@ namespace gameengine {
     protected:
         GameObject* game_object = nullptr;
     public:
-        Silhouette(GameObject* game_object): game_object(game_object)
-        {}
+        Silhouette(GameObject* game_object): 
+			game_object(game_object){}
 
         virtual bool IsMouseOn(sf::RenderWindow& render_window) = 0;
     };

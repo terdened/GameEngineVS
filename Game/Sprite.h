@@ -13,8 +13,9 @@ namespace gameengine {
         string resource_name;
         shared_ptr<sf::Sprite> sprite;
     public:
-        SpriteGameObject(sf::RenderWindow& app, string resource_name) : GameObject(app), resource_name(resource_name)
-            {   }
+        SpriteGameObject(sf::RenderWindow& app, string resource_name) : 
+			GameObject(app), 
+			resource_name(resource_name) { }
 
         void Init(ResourceManager* resource_manager);
     };

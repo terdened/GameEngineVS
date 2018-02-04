@@ -60,7 +60,8 @@ namespace gameengine {
 		delta_scale.x = delta_scale.x * current_key_frame_position / current_key_frame_duration;
 		delta_scale.y = delta_scale.y * current_key_frame_position / current_key_frame_duration;
 
-		auto delta_rotation = (next_frame.transform_data.rotation - active_frame.transform_data.rotation) * current_key_frame_position / current_key_frame_duration;
+		auto delta_rotation = (next_frame.transform_data.rotation - active_frame.transform_data.rotation) 
+			* current_key_frame_position / current_key_frame_duration;
 
 		auto current_frame = KeyFrame();
 
@@ -72,10 +73,12 @@ namespace gameengine {
 	}
 
 	KeyFrame Animation::GetActiveKeyFrame(int current_frame) {
-		auto frame = find_if(key_frames.begin(), key_frames.end(), [&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
+		auto frame = find_if(key_frames.begin(), key_frames.end(), 
+			[&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
 		while (current_frame > 0 && frame == key_frames.end()) {
 			current_frame--;
-			frame = find_if(key_frames.begin(), key_frames.end(), [&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
+			frame = find_if(key_frames.begin(), key_frames.end(), 
+				[&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
 		}
 
 		if (frame == key_frames.end())
@@ -85,10 +88,12 @@ namespace gameengine {
 	}
 
 	KeyFrame Animation::get_next_key_frame(int current_frame) {
-		auto frame = find_if(key_frames.begin(), key_frames.end(), [&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
+		auto frame = find_if(key_frames.begin(), key_frames.end(), 
+			[&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
 		while (current_frame < duration && frame == key_frames.end()) {
 			current_frame++;
-			frame = find_if(key_frames.begin(), key_frames.end(), [&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
+			frame = find_if(key_frames.begin(), key_frames.end(), 
+				[&current_frame](KeyFrame kf) { return kf.frame_number == current_frame; });
 		}
 
 		if (frame == key_frames.end())

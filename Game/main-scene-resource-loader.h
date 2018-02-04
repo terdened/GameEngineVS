@@ -11,8 +11,8 @@ using namespace gameengine;
 
 class MainSceneResourceLoader: public ResourceLoader {
 public:
-    MainSceneResourceLoader(ResourceManager* resource_manager): ResourceLoader(resource_manager)
-        { }
+    MainSceneResourceLoader(ResourceManager* resource_manager): 
+		ResourceLoader(resource_manager) { }
     void Load() override;
 };
 

@@ -26,7 +26,8 @@ namespace gameengine {
 	}
 
 	shared_ptr<Animation> AnimationController::GetNextAnimation() {
-		pair <multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>>::iterator, multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>>::iterator> ret;
+		pair <multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>>::iterator, 
+			multimap<shared_ptr<Animation>, shared_ptr<AnimationTransition>>::iterator> ret;
 		ret = animation_map.equal_range(current_animation);
 		bool animation_ended = current_animation->State() == AnimationState::kEnded;
 

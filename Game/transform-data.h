@@ -9,8 +9,9 @@ namespace gameengine {
 		sf::Vector2f scale;
 		float rotation;
 
-		TransformData() : position(sf::Vector2f(0, 0)), 
-						  scale(sf::Vector2f(1, 1)),
-					      rotation(0) {}
+		TransformData() : 
+			position(sf::Vector2f(0, 0)), 
+			scale(sf::Vector2f(1, 1)),
+			rotation(0) { }
 	};
 }
